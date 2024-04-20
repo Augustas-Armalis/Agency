@@ -1,0 +1,260 @@
+/* Fonts */
+
+@font-face {
+  font-family: "NewYork";
+  src: url("fonts/new_york/NewYork\ PERSONAL\ USE.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sf";
+  src: url("fonts/sf_pro_display/SFPRODISPLAYREGULAR.OTF") format("truetype");
+}
+
+/* Essentials */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  color: white;
+  background-color: rgb(15, 15, 15);
+  font-family: "Sf", Arial, Helvetica, sans-serif;
+}
+
+/* Navigation bar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(70, 70, 70, 0.5);
+  color: white;
+  padding: 10px 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+}
+
+
+
+.navbar-left h1 {
+  margin: 0;
+}
+
+.navbar-right {
+  position: relative;
+}
+
+.burger-menu {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  margin-right: 20px;
+}
+
+/* Grid */
+
+.grid {
+  background-size: 10rem 10rem;
+  background-image:
+    linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+}
+
+/* Background video */
+
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+}
+
+/* Landing page */
+
+.landing-main-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-in-container {
+  overflow: hidden;
+  display: flex;
+}
+
+.load-in-container p {
+  font-size: 2rem;
+  margin: 0;
+  line-height: auto;
+}
+
+
+/* Navigation Below Bar */
+
+.belowbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(70, 70, 70, 0.5);
+  color: white;
+  text-align: center;
+  height: 40px;
+}
+
+.belowbar-left,
+.belowbar-right {
+  font-size: 18px;
+}
+
+.belowbar-left {
+  margin-left: 20px;
+}
+
+.belowbar-right {
+  margin-right: 20px;
+}
+
+
+/* Nav bar */
+
+.nav-items {
+  overflow: hidden;
+}
+
+.navigation-item {
+  opacity: 0;
+  transform: translateY(100%);
+  overflow: hidden;
+}
+
+.hide-the-nav {
+  overflow: hidden;
+}
+
+.main .bars {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  right: 2%;
+  top: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 9999999999;
+  cursor: pointer;
+  align-items: center;
+}
+
+.main .bars::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 90%;
+  background: #fff;
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.main .bars.active::before {
+  transform: rotate(45deg);
+  width: 100%;
+  background: #ffffff;
+}
+
+.main .bars::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 90%;
+  background: #fff;
+  margin-bottom: 60%;
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.main .bars.active::after {
+  transform: rotate(-45deg);
+  width: 100%;
+  margin-top: 60%;
+  background: #ffffff;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999;
+  overflow: hidden;
+  display: none;
+}
+
+.menu .nav {
+  position: relative;
+  margin-bottom: 100%;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "NewYork";
+}
+
+.menu .nav ul {
+  opacity: 0;
+}
+
+.menu .nav ul li {
+  list-style: none;
+}
+
+.navigation-item a {
+  position: relative;
+  font-size: 4.5rem;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+}
+
+.navigation-item a:hover,
+.navigation-item a.active {
+  color: #3f3f3f;
+}
+
+@media screen and (max-width: 600px) {
+  .nav {
+    margin-bottom: 200%;
+  }
+
+  .main .bars {
+    right: 2%;
+    top: 1%;
+  }
+}

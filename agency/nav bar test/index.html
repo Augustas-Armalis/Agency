@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation Example</title>
+  <!-- Include GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <!-- Include SplitText -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/SplitText.min.js"></script>
+  <style>
+    .load-in-container {
+      overflow: hidden;
+      border: solid 2px white;
+    }
+
+    .load-in-container p {
+      font-size: 2rem;
+      margin: 0;
+      line-height: 1;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="load-in-container">
+    <p class="split" id="text">Armalis Agency</p>
+  </div>
+  <script>
+    gsap.registerPlugin(SplitText);
+
+    let mySplitText = new SplitText('#text', { type: 'chars' });
+    let chars = mySplitText.chars;
+
+    gsap.from(chars, {
+      yPercent: 100,
+      duration: 1,
+      ease: "back.out",
+      stagger: {
+        each: 0.05,
+        from: "end"
+      }
+    });
+  </script>
+</body>
+
+</html>

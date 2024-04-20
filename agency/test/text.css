@@ -1,0 +1,262 @@
+/* Fonts */
+
+@font-face {
+  font-family: "NewYork";
+  src: url("fonts/new_york/NewYork\ PERSONAL\ USE.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sf";
+  src: url("fonts/sf_pro_display/SFPRODISPLAYREGULAR.OTF") format("truetype");
+}
+
+/* Essentials */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  color: white;
+  font-family: "Sf", Arial, Helvetica, sans-serif;
+}
+
+/* Navigation bar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(70, 70, 70, 0.5);
+  color: white;
+  padding: 10px 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+}
+
+
+
+.navbar-left h1 {
+  margin: 0;
+}
+
+.navbar-right {
+  position: relative;
+}
+
+.burger-menu {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  margin-right: 20px;
+}
+
+/* Grid */
+
+.grid {
+  background-size: 10rem 10rem;
+  background-image:
+    linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+}
+
+/* Background video */
+
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+}
+
+/* Landing page */
+
+.landing-main-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navigation Below Bar */
+
+.belowbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(70, 70, 70, 0.5);
+  color: white;
+  text-align: center;
+  height: 40px;
+}
+
+.belowbar-left,
+.belowbar-right {
+  font-size: 18px;
+}
+
+.belowbar-left {
+  margin-left: 20px;
+}
+
+.belowbar-right {
+  margin-right: 20px;
+}
+
+/* Slide on scroll */
+
+.first-container {
+  height: 100vh;
+  background-color: rgb(95, 95, 95);
+  border-top: 1px solid aqua;
+}
+
+/* Read on scroll */
+
+.second-container {
+  height: 100vh;
+  background-color: rgb(129, 129, 129);
+  border-bottom: 1px solid aqua;
+}
+
+/* First cards (1, 2, 3) container*/
+
+.cards-container1 {
+  height: auto;
+  background-color: rgba(185, 111, 111, 0.5);
+  /*For now, then it'll depend on the animation*/
+}
+
+/* Card itself, since they're all the same */
+
+#card {
+  background-color: blueviolet;
+  width: 10rem;
+  height: 15rem;
+}
+
+/* Remove this when doing the animation */
+/* Cards to be horizontaly FOR NOW */
+
+.card-stack1 {
+  display: flex;
+  gap: 20px;
+}
+
+/* Remove this when doing the animation */
+/* Images to be horizontaly FOR NOW */
+/* Temporary images */
+
+.images-container {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  /* Ensure the video doesn't overflow */
+}
+
+#bgVideoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  /* Set the video behind other content */
+}
+
+
+.image-box {
+  z-index: 3;
+  height: 10rem;
+  width: 10rem;
+  background-color: rgb(108, 138, 128);
+}
+
+/* Second cards (4, 5, 6) container*/
+
+.cards-container2 {
+  height: auto;
+  background-color: rgba(185, 111, 111, 0.5);
+  /*For now, then it'll depend on the animation*/
+}
+
+/* Remove this when doing the animation */
+/* Cards to be horizontaly FOR NOW */
+
+.card-stack2 {
+  display: flex;
+  gap: 20px;
+}
+
+/* The benefits container */
+
+.benefits-container {
+  background-color: rgba(152, 129, 194, 0.5);
+  height: auto;
+}
+
+.little-benefits-container {
+  display: flex;
+  gap: 10px
+}
+
+/* Benefit inself container */
+
+#benefit {
+  height: 10rem;
+  width: 7rem;
+  background-color: brown;
+}
+
+/* Benefit logo */
+
+#benefit-logo {
+  height: 3rem;
+  width: 3rem;
+  background-color: gray;
+}
+
+/* What do we do container */
+
+.whatdo-container {
+  background-color: rgba(190, 169, 49, 0.5);
+  height: auto;
+}
+
+/* Little do we do */
+
+.little-whatdo-container {
+  display: flex;
+  gap: 7px;
+}
+
+#doWe {
+  background-color: rgb(138, 138, 138);
+  width: auto;
+}
