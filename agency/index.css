@@ -20,8 +20,28 @@
 body {
   height: 100%;
   color: white;
-  background-color: rgb(15, 15, 15);
+  background-color: black;
   font-family: "Sf", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.circle {
+  --circle-size: 40px;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 1px solid white;
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+  z-index: 999999999999999999;
+}
+
+.first-container {
+  background-color: black;
+  height: 100vh;
+  width: auto;
 }
 
 /* Navigation bar */
@@ -43,6 +63,23 @@ body {
     text-decoration: none;
     font-size: 1rem;
   }
+}
+
+
+.plans {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.login {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
 }
 
 
@@ -74,6 +111,23 @@ body {
     linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
   background-position: center;
+  z-index: 2;
+}
+
+.grid1 {
+  background-size: 10rem 10rem;
+  background-image:
+    linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+  z-index: 2;
+}
+
+.grid2 {
+  background-size: 10rem 10rem;
+  background-image:
+    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+  z-index: 2;
 }
 
 /* Background video */
@@ -87,16 +141,39 @@ body {
   width: auto;
   height: auto;
   z-index: -2;
+  opacity: 0.5;
+  /* Adjust the value (between 0 and 1) to change opacity */
 }
+
 
 /* Landing page */
 
-.landing-main-page {
+.grid-container-outside {
+  overflow: hidden;
+}
+
+.shiner-grider1,
+.shiner-grider2 {
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  z-index: -1;
+}
+
+
+.landing-main-page,
+.grid-container-inside {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 .load-in-container {
@@ -114,17 +191,18 @@ body {
 /* Navigation Below Bar */
 
 .belowbar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(70, 70, 70, 0.5);
+  background-color: none;
   color: white;
   text-align: center;
-  height: 40px;
+  height: auto;
+  padding-bottom: 1rem;
 }
 
 .belowbar-left,
@@ -143,6 +221,19 @@ body {
 
 /* Nav bar */
 
+.brand-name {
+  position: fixed;
+  margin-left: 2%;
+  margin-top: 1.5%;
+}
+
+.brand-name a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
 .nav-items {
   overflow: hidden;
 }
@@ -157,7 +248,7 @@ body {
   overflow: hidden;
 }
 
-.main .bars {
+.load-in-container-bars {
   position: fixed;
   height: 50px;
   width: 50px;
@@ -166,9 +257,25 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  z-index: 9999999999;
+  z-index: 999999;
   cursor: pointer;
   align-items: center;
+  overflow: hidden;
+}
+
+.main .bars {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  right: 2%;
+  top: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 999999;
+  cursor: pointer;
+  align-items: center;
+
 }
 
 .main .bars::before {
@@ -209,7 +316,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999999999;
+  z-index: 999;
   overflow: hidden;
   display: none;
 }
@@ -248,13 +355,91 @@ body {
   color: #3f3f3f;
 }
 
+
+
+.landing-text-container {
+  overflow: hidden;
+  width: 100vw;
+  height: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.land-line-container {
+  overflow: hidden;
+  width: 100vw;
+  height: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#land-line {
+  display: flex;
+  font-size: 10vw;
+  width: auto;
+  line-height: 1;
+}
+
+#newYork {
+  font-family: "NewYork";
+}
+
+#sf {
+  font-family: "Sf";
+}
+
+.land-newyork1 {
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+}
+
+
 @media screen and (max-width: 600px) {
   .nav {
     margin-bottom: 200%;
   }
 
   .main .bars {
-    right: 2%;
-    top: 1%;
+    right: 3%;
+    top: 2%;
   }
+
+  .brand-name {
+    margin-left: 5%;
+    margin-top: 5%;
+
+    a {
+      font-size: 1rem;
+    }
+  }
+
+  #land-line {
+    font-size: 15vw;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .circle {
+    display: none;
+  }
+
+  a.plans {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  a.login {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+
 }
