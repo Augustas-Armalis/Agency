@@ -1,13 +1,44 @@
-//Navigation Menu
+// Navigation Menu
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Disable scrolling
+  document.body.style.overflow = "hidden";
+
+  // Re-enable scrolling after 4 seconds
+  setTimeout(function () {
+    document.body.style.overflow = "auto";
+  }, 4000);
+});
+
 
 window.onload = function () {
   const bars = document.querySelector(".bars");
   const menu = document.querySelector(".menu");
   const navItems = document.querySelectorAll(".navigation-item");
+  let menuOpen = false; // Track if the menu is open
+  let lenisInstance; // Track the Lenis instance
+
+  // Function to initialize the Lenis instance and its scroll event handling
+  function initializeLenis() {
+    lenisInstance = new Lenis();
+    lenisInstance.on('scroll', (e) => {
+      console.log(e);
+    });
+    function raf(time) {
+      lenisInstance.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
+  // Delay the initialization of Lenis by 5 seconds
+  setTimeout(initializeLenis, 5000);
 
   bars.addEventListener("click", function (e) {
     this.classList.toggle("active");
-    if (this.classList.contains("active")) {
+    menuOpen = !menuOpen; // Toggle the menu state
+    if (menuOpen) {
+      // Code for opening navigation bar
       gsap.to(".menu", {
         duration: 1,
         display: "flex",
@@ -32,7 +63,15 @@ window.onload = function () {
           });
         }
       });
+      // Disable scrolling when menu is open
+      document.body.style.overflow = 'hidden';
+      // Destroy the Lenis instance when the menu is open
+      if (lenisInstance) {
+        lenisInstance.destroy();
+        lenisInstance = null;
+      }
     } else {
+      // Code for closing navigation bar
       gsap.to(".navigation-item", {
         duration: 0.5,
         y: "-100%",
@@ -55,11 +94,15 @@ window.onload = function () {
           });
         }
       });
+      // Enable scrolling when menu is closed
+      document.body.style.overflow = 'auto';
+      // Reinitialize Lenis when the menu is closed
+      initializeLenis();
     }
   });
 };
 
-
+// Split Animation
 gsap.from(".split", {
   yPercent: 100,
   duration: 0.5,
@@ -76,8 +119,8 @@ gsap.from(".split", {
   }
 });
 
+// Agency A Animation
 gsap.set(".agency-a", { x: -130 });
-
 gsap.to(".agency-a", {
   x: 0,
   duration: 1,
@@ -88,14 +131,12 @@ gsap.to(".agency-a", {
       y: 0,
       duration: 1,
       ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
-
     });
   }
 });
 
-
+// Plans Animation
 gsap.set(".plans", { x: -130 });
-
 gsap.to(".plans", {
   x: 0,
   duration: 1,
@@ -106,17 +147,12 @@ gsap.to(".plans", {
       y: 0,
       duration: 1,
       ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
-
     });
   }
 });
 
-
-
-
-
+// Bars Animation
 gsap.set(".bars", { x: 100 });
-
 gsap.to(".bars", {
   x: 0,
   duration: 1.5,
@@ -131,11 +167,8 @@ gsap.to(".bars", {
   }
 });
 
-
-
-
+// Agency A1 Animation
 gsap.set(".agency-a1", { x: -130 });
-
 gsap.to(".agency-a1", {
   x: 0,
   duration: 1,
@@ -146,16 +179,15 @@ gsap.to(".agency-a1", {
       y: 0,
       duration: 1,
       ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
-
     });
   }
 });
 
-gsap.set(".bars1", { x: 100 });
-
+// Bars1 Animation
+gsap.set(".bars1", { x: 270 });
 gsap.to(".bars1", {
   x: 0,
-  duration: 1.5,
+  duration: 1.2,
   ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
   delay: 5,
   onComplete: function () {
@@ -167,12 +199,7 @@ gsap.to(".bars1", {
   }
 });
 
-
-
-
-
-
-
+// Land1 Animation
 gsap.from(".land1", {
   yPercent: 100,
   duration: 0.5,
@@ -188,13 +215,11 @@ gsap.from(".land1", {
   }
 });
 
-
-
+// Land2 Animation
 gsap.from(".land2", {
   yPercent: 100,
   duration: 0.5,
   ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
-  stagger: 0.05,
   stagger: {
     amount: 0.5,
     from: "end",
@@ -210,7 +235,7 @@ gsap.from(".land2", {
   }
 });
 
-
+// Land3 Animation
 gsap.from(".land3", {
   yPercent: 100,
   duration: 0.5,
@@ -226,8 +251,7 @@ gsap.from(".land3", {
   }
 });
 
-
-
+// Shiner-Grider1 Animation
 gsap.from(".shiner-grider1", {
   yPercent: -100,
   duration: 1,
@@ -243,6 +267,7 @@ gsap.from(".shiner-grider1", {
   }
 });
 
+// Shiner-Grider2 Animation
 gsap.from(".shiner-grider2", {
   xPercent: -100,
   duration: 1,
@@ -259,52 +284,43 @@ gsap.from(".shiner-grider2", {
 });
 
 
-// Target the video element
+// Fade In Background Video
 const video = document.getElementById('bgVideo');
-
-// Set initial opacity to 0
 gsap.set(video, { opacity: 0 });
-
-// Define the fade in animation
 const fadeInAnimation = () => {
   gsap.to(video, { duration: 2, opacity: 1, ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)" });
 };
-
-// Add delay before starting the animation
 const delay = 5; // Delay in seconds
 gsap.delayedCall(delay, fadeInAnimation);
 
+// Fade In Arrow
+const arrow = document.querySelector('.arrow');
+gsap.set(arrow, { opacity: 0 });
+const fadeInArrow = () => {
+  gsap.to(arrow, { duration: 2, opacity: 1, ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)" });
+};
+const arrowDelay = 6.6; // Delay in seconds
+gsap.delayedCall(arrowDelay, fadeInArrow);
 
-
-
-// Target the circle element
+// Fade In Circle
 const circleAppear = document.querySelector('.circle');
-
-// Set initial opacity to 0
 gsap.set(circleAppear, { opacity: 0 });
-
-// Define the fade in animation
 const circleFadeInAnimation = () => {
   gsap.to(circleAppear, { duration: 1, opacity: 1, ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)" });
 };
-
-// Add delay before starting the animation
 const circleDelay = 4; // Delay in seconds
 gsap.delayedCall(circleDelay, circleFadeInAnimation);
 
 
-// mouse
-
-console.clear();
-
+// Mouse Animation
 const circleElement = document.querySelector('.circle');
-
 const mouse = { x: 0, y: 0 };
 const previousMouse = { x: 0, y: 0 };
 const circle = { x: 0, y: 0 };
 let currentScale = 0;
 let currentAngle = 0;
 
+// Function to handle mouse movement
 window.addEventListener('mousemove', (e) => {
   mouse.x = e.x;
   mouse.y = e.y;
@@ -340,10 +356,7 @@ const tick = () => {
 
 tick();
 
-
-
-
-
+//Background video mouse
 
 const bgVideo = document.getElementById('bgVideo');
 gsap.set(bgVideo, { opacity: 0 });
@@ -418,20 +431,68 @@ window.addEventListener('touchend', () => {
   pauseBackgroundVideo();
 });
 
+// Define variables for the first set of code
+const spinningImg = document.querySelector('#spinning-img');
+const img = spinningImg.querySelector('img');
+const hoverTrigger = document.querySelector('#hover-trigger');
 
+// Initial rotation animation for the first set of code
+const initialRotation = gsap.to(img, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
 
-
-
-
-const lenis = new Lenis()
-
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
-
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
+// Function to change spinning speed for the first set of code
+function changeSpeed1(speed) {
+  gsap.to(initialRotation, {
+    timeScale: speed,
+    duration: 0.25, // Smooth transition duration
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)" // Easing function for smooth transition
+  });
 }
 
-requestAnimationFrame(raf)
+// Hover animation trigger for the first set of code
+hoverTrigger.addEventListener('mouseenter', () => {
+  console.log("hover event triggered for the first set of code");
+  changeSpeed1(4); // Double the speed on hover
+});
+
+hoverTrigger.addEventListener('mouseleave', () => {
+  console.log("mouseleave event triggered for the first set of code");
+  changeSpeed1(1); // Restore original speed on hover out
+});
+
+// Define variables for the second set of code
+const spinner = document.querySelector('#spinning-img1');
+const image = spinner.querySelector('img');
+const trigger = document.querySelector('#hover-trigger1');
+
+// Initial rotation animation for the second set of code
+const rotationAnimation = gsap.to(image, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+// Function to change spinning speed for the second set of code
+function changeSpeed2(speed) {
+  gsap.to(rotationAnimation, {
+    timeScale: speed,
+    duration: 0.25, // Smooth transition duration
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)" // Easing function for smooth transition
+  });
+}
+
+// Hover animation trigger for the second set of code
+trigger.addEventListener('mouseenter', () => {
+  console.log("hover event triggered for the second set of code");
+  changeSpeed2(4); // Double the speed on hover
+});
+
+trigger.addEventListener('mouseleave', () => {
+  console.log("mouseleave event triggered for the second set of code");
+  changeSpeed2(1); // Restore original speed on hover out
+});
