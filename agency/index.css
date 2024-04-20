@@ -1,5 +1,4 @@
 /* Fonts */
-
 @font-face {
   font-family: "NewYork";
   src: url("fonts/new_york/NewYork\ PERSONAL\ USE.otf") format("truetype");
@@ -11,24 +10,72 @@
 }
 
 /* Essentials */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
-*{
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
-  input, textarea, button, select, a{
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-
-  a:focus, a:visited, a:active{
-    outline: none;
-  }
+a:focus,
+a:visited,
+a:active {
+  outline: none;
+}
 
 * {
   margin: 0;
   padding: 0;
 }
 
+/* Hide scrollbar when not needed */
+::-webkit-scrollbar {
+  display: none;
+}
+
+#spinning-img,
+#spinning-img1 {
+  width: 1.5rem;
+  height: auto;
+  overflow: hidden;
+  padding-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.circle-image {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.agency-a1 {
+  margin-left: 2%;
+  margin-bottom: 0.5%;
+}
+
+.bars1 {
+  margin-right: 2%;
+  margin-bottom: 0.5%;
+}
+
+.plans,
+.login {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Body */
 body {
   height: 100%;
   color: white;
@@ -37,6 +84,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Circle */
 .circle {
   --circle-size: 40px;
   position: fixed;
@@ -50,6 +98,7 @@ body {
   z-index: 999999999999999999;
 }
 
+/* Containers */
 .first-container {
   background-color: black;
   height: 100vh;
@@ -57,7 +106,6 @@ body {
 }
 
 /* Navigation bar */
-
 .navbar {
   position: fixed;
   top: 0;
@@ -69,32 +117,7 @@ body {
   background-color: rgba(70, 70, 70, 0.5);
   color: white;
   padding: 10px 20px;
-
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-  }
 }
-
-
-.plans {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 2rem;
-  margin-bottom: 2rem;
-}
-
-.login {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
-}
-
-
 
 .navbar-left h1 {
   margin: 0;
@@ -116,11 +139,9 @@ body {
 }
 
 /* Grid */
-
 .grid {
   background-size: 10rem 10rem;
-  background-image:
-    linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
   background-position: center;
   z-index: 2;
@@ -128,22 +149,19 @@ body {
 
 .grid1 {
   background-size: 10rem 10rem;
-  background-image:
-    linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px);
   background-position: center;
   z-index: 2;
 }
 
 .grid2 {
   background-size: 10rem 10rem;
-  background-image:
-    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-image: linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
   background-position: center;
   z-index: 2;
 }
 
 /* Background video */
-
 #bgVideo {
   position: fixed;
   right: 0;
@@ -154,12 +172,9 @@ body {
   height: auto;
   z-index: -2;
   opacity: 0.5;
-  /* Adjust the value (between 0 and 1) to change opacity */
 }
 
-
 /* Landing page */
-
 .grid-container-outside {
   overflow: hidden;
 }
@@ -176,7 +191,6 @@ body {
   z-index: -1;
 }
 
-
 .landing-main-page,
 .grid-container-inside {
   height: 100vh;
@@ -185,23 +199,22 @@ body {
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-  overflow-x: hidden !important;
 }
 
 .load-in-container {
   overflow: hidden;
   display: flex;
+  cursor: default;
 }
 
 .load-in-container p {
   font-size: 2rem;
   margin: 0;
   line-height: auto;
+  cursor: default;
 }
 
-
 /* Navigation Below Bar */
-
 .belowbar {
   position: fixed;
   bottom: 0;
@@ -215,6 +228,7 @@ body {
   text-align: center;
   height: auto;
   padding-bottom: 1rem;
+  z-index: 999999;
 }
 
 .belowbar-left,
@@ -230,9 +244,7 @@ body {
   margin-right: 20px;
 }
 
-
 /* Nav bar */
-
 .brand-name {
   position: fixed;
   margin-left: 2%;
@@ -271,8 +283,6 @@ body {
   align-items: center;
   z-index: 999999;
   cursor: pointer;
-  align-items: center;
-  overflow: hidden;
 }
 
 .main .bars {
@@ -286,8 +296,6 @@ body {
   align-items: center;
   z-index: 999999;
   cursor: pointer;
-  align-items: center;
-
 }
 
 .main .bars::before {
@@ -356,7 +364,7 @@ body {
 
 .navigation-item a {
   position: relative;
-  font-size: 4.5rem;
+  font-size: 6rem;
   text-decoration: none;
   text-align: center;
   color: #ffffff;
@@ -367,8 +375,6 @@ body {
   color: #3f3f3f;
 }
 
-
-
 .landing-text-container {
   overflow: hidden;
   width: 100vw;
@@ -376,6 +382,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
+  cursor: default;
 }
 
 .land-line-container {
@@ -406,10 +413,50 @@ body {
   width: auto;
   margin: 0;
   padding: 0;
-
 }
 
+.column {
+  width: 0;
+  padding-top: 4rem;
+}
 
+.box {
+  position: absolute;
+  height: 100px;
+}
+
+.box span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.box1 span {
+  transform: rotate(60deg);
+  margin: -20px;
+  animation: animate 2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(0px, 0px);
+  }
+}
+
+/* Media Queries */
 @media screen and (max-width: 600px) {
   .nav {
     margin-bottom: 200%;
@@ -453,5 +500,37 @@ body {
     font-size: 1rem;
   }
 
+  .agency-a1 {
+    margin-left: -1%;
+    margin-bottom: -7%;
+  }
 
+  .bars1 {
+    margin-right: 3.5%;
+    margin-bottom: -6%;
+  }
+
+  #spinning-img,
+  #spinning-img1 {
+    width: 1rem;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 0.2rem;
+    margin-right: 0.5rem;
+  }
+
+  .circle-image {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .navigation-item a {
+    font-size: 4rem;
+  }
+
+  .column {
+    padding-top: 7rem;
+  }
 }
