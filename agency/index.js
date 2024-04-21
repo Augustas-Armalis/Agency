@@ -496,7 +496,6 @@ if (window.innerWidth <= 768) {
   multipliertext = 1.1;
 }
 
-
 const splitTypes = document.querySelectorAll('.reveal-type')
 
 splitTypes.forEach((char, i) => {
@@ -547,4 +546,27 @@ gsap.from(".below-sideways-moving-text", {
   duration: 1,
   ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
   stagger: 0.5,
+});
+
+let cardSmth
+if (window.innerWidth <= 768) {
+  cardSmth = 6;
+} else {
+  cardSmth = 1;
+}
+
+gsap.set(".flying-card", { yPercent: 130 });
+
+gsap.to(".flying-card", {
+  scrollTrigger: {
+    trigger: ".third-container",
+    start: "top",
+    end: () => "+=" + (containerWidth * cardSmth),
+    scrub: 1,
+    pin: ".third-container"
+  },
+  yPercent: 0,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  duration: 1,
+  stagger: 1,
 });
