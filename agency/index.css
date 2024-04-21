@@ -13,8 +13,15 @@
   src: url("fonts/sf_pro_display/SFPRODISPLAYBOLD.OTF") format("truetype");
 }
 
+@font-face {
+  font-family: "SfItalic";
+  src: url("fonts/sf_pro_display/SFPRODISPLAYTHINITALIC.OTF") format("truetype");
+}
+
 h1 {
-  font-family: "SfBold";
+  font-family: "Sf";
+  font-weight: 500;
+  cursor: default;
 }
 
 #newYork {
@@ -513,6 +520,7 @@ body {
   margin-bottom: 4rem;
   font-size: 2rem;
   cursor: default;
+  font-family: "SfItalic";
 }
 
 .second-container {
@@ -530,15 +538,36 @@ body {
 .third-container {
   height: 100vh;
   background-color: black;
-  height: 100vh;
   width: auto;
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   border-top: 1px solid rgba(70, 70, 70, 1);
+  flex-wrap: wrap;
+}
+
+.third-container-example {
+  height: 100vh;
+  background-color: black;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.third-container-example {
+  background-size: 10rem 10rem;
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+  z-index: 90;
 }
 
 .third-container {
@@ -549,7 +578,199 @@ body {
   z-index: 90;
 }
 
+.flying-card {
+  height: 70vh;
+  background-color: rgba(5, 5, 5, 1);
+  border: 1px solid rgba(99, 99, 99, 1);
+  border-radius: 13px;
+  flex: 1;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
+
+}
+
+.upper-card {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding-top: 6rem;
+  cursor: default;
+}
+
+.card-number {
+  font-size: 17vw;
+  position: absolute;
+  background: #FFFFFF;
+  background: linear-gradient(180deg, #FFFFFF 40%, #00000000 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 30;
+  cursor: default;
+}
+
+.card-number-glow {
+  position: absolute;
+  height: 7vw;
+  width: 7vw;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 99999px;
+  -webkit-filter: blur(70px);
+  -moz-filter: blur(70px);
+  -o-filter: blur(70px);
+  -ms-filter: blur(70px);
+  filter: blur(70px);
+  z-index: 20;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-title {
+  position: absolute;
+  font-size: 7vw;
+  font-family: "NewYork";
+  padding-bottom: 2rem;
+  cursor: default;
+}
+
+.down-card {
+  height: 50%;
+  width: auto;
+  display: flex;
+  align-items: top;
+  text-align: center;
+  font-family: "SfItalic";
+  font-size: 2vw;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: default;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .card-number-glow {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-filter: blur(60px);
+    -moz-filter: blur(60px);
+    -o-filter: blur(60px);
+    -ms-filter: blur(60px);
+    filter: blur(60px);
+    margin-bottom: 5rem;
+  }
+
+  .down-card {
+    font-size: 5vh;
+  }
+
+  .third-container {
+    flex-direction: column;
+  }
+
+  .card-title {
+    font-size: 15vh;
+  }
+
+  .card-number {
+    font-size: 35vh;
+    position: absolute;
+  }
+
+  .flying-card {
+    height: 70vh;
+    width: 80%;
+    position: absolute;
+  }
+
+  .title {
+    margin-top: 5rem;
+    font-family: "Sf";
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .circle {
+    display: none;
+  }
+
+  .below-sideways-moving-text {
+    margin-bottom: 4rem;
+    font-size: 2rem
+  }
+
+  .moving-sideways {
+    font-size: 10rem;
+  }
+
+  #spinning-img,
+  #spinning-img1 {
+    width: 1rem;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 0.2rem;
+    margin-right: 0.5rem;
+  }
+
+  .circle-image {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .navigation-item a {
+    font-size: 4rem;
+  }
+
+  .column {
+    padding-top: 7rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
+
+  .down-card {
+    font-size: 7vw;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .third-container {
+    flex-direction: column;
+  }
+
+  .card-title {
+    font-size: 20vw;
+  }
+
+  .card-number {
+    font-size: 60vw;
+    position: absolute;
+  }
+
+  .flying-card {
+    height: 70vh;
+    width: 80%;
+    position: absolute;
+  }
+
   .title {
     margin-top: 5rem;
     font-family: "Sf";
