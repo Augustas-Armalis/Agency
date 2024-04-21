@@ -447,7 +447,7 @@ body {
 }
 
 .box {
-  position: fixed;
+  position: absolute;
   height: 100px;
 }
 
@@ -455,8 +455,9 @@ body {
   display: block;
   width: 40px;
   height: 40px;
-  position: fixed;
-  bottom: 8rem;
+  position: absolute;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
 }
 
 .box1 span {
