@@ -536,6 +536,8 @@ gsap.from(".title", {
   stagger: 0.2,
 });
 
+
+
 gsap.from(".below-sideways-moving-text", {
   delay: 0.5,
   scrollTrigger: {
@@ -570,3 +572,145 @@ gsap.to(".flying-card", {
   duration: 1,
   stagger: 1,
 });
+
+gsap.from(".title4", {
+  scrollTrigger: {
+    trigger: ".title4",
+    toggleActions: "restart none restart restart"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
+gsap.from(".fourth-text", {
+  delay: 0.5,
+  scrollTrigger: {
+    trigger: ".fourth-text",
+    toggleActions: "restart none restart restart"
+  },
+  opacity: 0,
+  duration: 1,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.5,
+});
+
+
+let currentScroll = 0;
+let isScrollingDown = true;
+let tween;
+let isDragging = false;
+let initialDragX = 0;
+let dragPercentage = 100; // Added to track drag percentage
+let currentDirection = 1; // Default direction
+
+// Calculate total width of marquee content
+const marqueeWidth = document.querySelector('.marquee-inner').offsetWidth;
+
+// Function to create GSAP animation
+function createAnimation() {
+  tween = gsap.to(".marquee-inner", {
+    x: -marqueeWidth / 2, // Initial position
+    repeat: -1, // Repeat indefinitely
+    duration: 10, // Adjust duration as needed
+    ease: "linear",
+  }).totalProgress(0.5);
+}
+
+// Initialize animation
+createAnimation();
+
+// Pause animation on mouseenter with transition
+document.querySelectorAll('.marquee-part').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    gsap.to(tween, {
+      timeScale: 0,
+      duration: 0.5, // Adjust transition duration as needed
+    });
+  });
+});
+
+// Resume animation on mouseleave with transition
+document.querySelectorAll('.marquee-part').forEach(item => {
+  item.addEventListener('mouseleave', () => {
+    gsap.to(tween, {
+      timeScale: currentDirection,
+      duration: 0.5, // Adjust transition duration as needed
+    });
+  });
+});
+
+// Start dragging
+function startDrag(event) {
+  if (event.target.classList.contains('marquee-part')) {
+    isDragging = true;
+    initialDragX = event.clientX || event.touches[0].clientX;
+    gsap.set(tween, { timeScale: 0 }); // Pause animation when dragging starts
+  }
+}
+
+// Continue dragging
+function drag(event) {
+  if (isDragging) {
+    const clientX = event.clientX || event.touches[0].clientX;
+    const dragDistance = clientX - initialDragX;
+    let sensitivity = 1; // Default sensitivity for desktop
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      sensitivity = 6; // High sensitivity for mobile devices
+    }
+    dragPercentage = dragDistance / (window.innerWidth * sensitivity); // Update drag percentage with sensitivity
+    tween.progress(tween.progress() - dragPercentage); // Adjust animation progress based on drag distance
+    initialDragX = clientX;
+  }
+}
+
+
+// End dragging
+function endDrag() {
+  if (isDragging) {
+    isDragging = false;
+    // Calculate the direction based on drag percentage and reverse it
+    currentDirection = dragPercentage > 0 ? -1 : 1;
+    // Resume animation with adjusted timeScale and smooth transition
+    gsap.to(tween, {
+      timeScale: currentDirection,
+      duration: 0.5, // Smooth transition duration
+      onComplete: () => {
+        // Adjust tween progress after transition
+        tween.progress(tween.progress() - dragPercentage);
+        // Reset drag percentage
+        dragPercentage = 0;
+      }
+    });
+  }
+}
+
+
+
+// Event listeners for mouse events
+window.addEventListener('mousedown', startDrag);
+window.addEventListener('mousemove', drag);
+window.addEventListener('mouseup', endDrag);
+
+// Event listeners for touch events
+window.addEventListener('touchstart', startDrag);
+window.addEventListener('touchmove', drag);
+window.addEventListener('touchend', endDrag);
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > currentScroll) {
+    isScrollingDown = true;
+  } else {
+    isScrollingDown = false;
+  }
+
+  gsap.to(tween, {
+    timeScale: isScrollingDown ? 1 : -1,
+    duration: 0.5, // Smooth transition duration
+  });
+
+  currentScroll = window.pageYOffset;
+});
+
+
