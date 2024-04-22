@@ -497,7 +497,7 @@ body {
   text-align: center;
 }
 
-.title {
+#title {
   margin-top: 6rem;
   font-family: "Sf";
   font-weight: 500;
@@ -550,7 +550,7 @@ body {
   flex-wrap: wrap;
 }
 
-.third-container-example {
+.fourth-container {
   height: 100vh;
   background-color: black;
   width: auto;
@@ -561,14 +561,44 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  text-align: center;
+
 }
 
-.third-container-example {
+.fourth-container {
   background-size: 10rem 10rem;
   background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
   background-position: center;
   z-index: 90;
+}
+
+.fourth-title {
+  align-self: baseline;
+  position: absolute;
+  z-index: 90;
+}
+
+
+#text-line-container {
+  width: 70%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  position: absolute;
+}
+
+
+
+
+.text-line {
+  font-size: 2.5vw;
+  font-family: "SfItalic";
+  background-color: #00000080;
+  border-radius: 10vw;
+  box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
 }
 
 .third-container {
@@ -623,23 +653,6 @@ body {
   cursor: default;
 }
 
-.card-number-glow {
-  position: absolute;
-  height: 7vw;
-  width: 7vw;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 99999px;
-  -webkit-filter: blur(70px);
-  -moz-filter: blur(70px);
-  -o-filter: blur(70px);
-  -ms-filter: blur(70px);
-  filter: blur(70px);
-  z-index: 20;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .card-title {
   position: absolute;
   font-size: 7vw;
@@ -662,23 +675,96 @@ body {
   cursor: default;
 }
 
+
+
+
+
+
+
+
+
+
+
+.marquee {
+  position: relative;
+  background-color: green;
+  color: wheat;
+  padding: 30px 0;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.marquee-inner {
+  display: flex;
+  width: fit-content;
+  flex: auto;
+  flex-direction: row;
+
+}
+
+.marquee-part {
+  display: flex;
+  align-items: center;
+  height: 10rem;
+  width: 10rem;
+  margin-left: 10rem;
+  background-color: rgb(134, 13, 13);
+}
+
+.fake {
+  height: 100vh;
+}
+
+.marquee-part {
+  user-select: none;
+  /* Standard syntax */
+  -webkit-user-select: none;
+  /* Webkit browsers */
+  -moz-user-select: none;
+  /* Mozilla Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}
+
+.size-scroll-foto {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 90;
+  background-color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1024px) {
+
+  .text-line {
+    font-size: 2.7vw;
+  }
 
   .box1 span {
     margin-top: 4rem;
-  }
-
-  .card-number-glow {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.4);
-    -webkit-filter: blur(60px);
-    -moz-filter: blur(60px);
-    -o-filter: blur(60px);
-    -ms-filter: blur(60px);
-    filter: blur(60px);
-    margin-bottom: 5rem;
   }
 
   .down-card {
@@ -704,7 +790,7 @@ body {
     position: absolute;
   }
 
-  .title {
+  #title {
     margin-top: 5rem;
     font-family: "Sf";
     font-weight: 500;
@@ -751,6 +837,14 @@ body {
 
 @media screen and (max-width: 600px) {
 
+  #text-line-container {
+    width: 90%;
+  }
+
+  .text-line {
+    font-size: 7vw;
+  }
+
   .down-card {
     font-size: 7vw;
     padding-left: 0.5rem;
@@ -776,7 +870,7 @@ body {
     position: absolute;
   }
 
-  .title {
+  #title {
     margin-top: 5rem;
     font-family: "Sf";
     font-weight: 500;
@@ -785,7 +879,7 @@ body {
 
   .below-sideways-moving-text {
     margin-bottom: 4rem;
-    font-size: 1rem
+    font-size: 1.5rem
   }
 
   .moving-sideways {
@@ -812,10 +906,6 @@ body {
 
   #land-line {
     font-size: 15vw;
-  }
-
-  body {
-    overflow-x: hidden !important;
   }
 
   .circle {
