@@ -258,7 +258,7 @@ gsap.from(".shiner-grider2", {
   }
 });
 
-const video = document.getElementById('bgVideo');
+const video = document.getElementById('bgVideo', 'bgVideo-foto');
 gsap.set(video, { opacity: 0 });
 const fadeInAnimation = () => {
   gsap.to(video, { duration: 2, opacity: 1, ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)" });
@@ -363,7 +363,7 @@ const calculateMouseVelocity = () => {
 const updatePlaybackRate = () => {
   const maxVelocity = 100;
   const minPlaybackRate = 0.5;
-  const maxPlaybackRate = 2;
+  const maxPlaybackRate = 1;
   calculateMouseVelocity();
   const newPlaybackRate = minPlaybackRate + (mouseVelocity / maxVelocity) * (maxPlaybackRate - minPlaybackRate) * 0.05;
   gsap.to(bgVideo, { playbackRate: newPlaybackRate, duration: 0.5 });
@@ -550,12 +550,21 @@ gsap.from(".below-sideways-moving-text", {
   stagger: 0.5,
 });
 
-let cardSmth
+let cardDuration
 if (window.innerWidth <= 768) {
-  cardSmth = 6;
+  cardDuration = 2;
 } else {
-  cardSmth = 1;
+  cardDuration = 1;
 }
+
+let cardStagger
+if (window.innerWidth <= 768) {
+  cardStagger = 6;
+} else {
+  cardStagger = 1;
+}
+
+
 
 gsap.set(".flying-card", { yPercent: 130 });
 
@@ -563,15 +572,34 @@ gsap.to(".flying-card", {
   scrollTrigger: {
     trigger: ".third-container",
     start: "top",
-    end: () => "+=" + (containerWidth * cardSmth),
+    end: () => "+=" + (containerWidth),
     scrub: 1,
     pin: ".third-container"
   },
   yPercent: 0,
   ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
-  duration: 1,
-  stagger: 1,
+  duration: cardDuration,
+  stagger: cardStagger,
 });
+
+
+gsap.set(".flying-card1", { yPercent: 130 });
+
+gsap.to(".flying-card1", {
+  scrollTrigger: {
+    trigger: ".third-container1",
+    start: "top",
+    end: () => "+=" + (containerWidth * 2),
+    scrub: 1,
+    pin: ".third-container1"
+  },
+  yPercent: 0,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  duration: cardDuration,
+  stagger: cardStagger,
+});
+
+
 
 gsap.from(".title4", {
   scrollTrigger: {
@@ -584,10 +612,45 @@ gsap.from(".title4", {
   stagger: 0.2,
 });
 
+gsap.from(".title41", {
+  scrollTrigger: {
+    trigger: ".title41",
+    toggleActions: "restart none restart restart"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
+gsap.from(".title42", {
+  scrollTrigger: {
+    trigger: ".title42",
+    toggleActions: "restart none restart restart"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
+
 gsap.from(".fourth-text", {
   delay: 0.5,
   scrollTrigger: {
     trigger: ".fourth-text",
+    toggleActions: "restart none restart restart"
+  },
+  opacity: 0,
+  duration: 1,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.5,
+});
+
+gsap.from(".fourth-text1", {
+  delay: 0.5,
+  scrollTrigger: {
+    trigger: ".fourth-text1",
     toggleActions: "restart none restart restart"
   },
   opacity: 0,
@@ -613,7 +676,7 @@ function createAnimation() {
   tween = gsap.to(".marquee-inner", {
     x: -marqueeWidth / 2, // Initial position
     repeat: -1, // Repeat indefinitely
-    duration: 10, // Adjust duration as needed
+    duration: 15, // Adjust duration as needed
     ease: "linear",
   }).totalProgress(0.5);
 }
@@ -626,7 +689,7 @@ document.querySelectorAll('.marquee-part').forEach(item => {
   item.addEventListener('mouseenter', () => {
     gsap.to(tween, {
       timeScale: 0,
-      duration: 0.5, // Adjust transition duration as needed
+      duration: 1, // Adjust transition duration as needed
     });
   });
 });
@@ -636,7 +699,7 @@ document.querySelectorAll('.marquee-part').forEach(item => {
   item.addEventListener('mouseleave', () => {
     gsap.to(tween, {
       timeScale: currentDirection,
-      duration: 0.5, // Adjust transition duration as needed
+      duration: 1, // Adjust transition duration as needed
     });
   });
 });
@@ -675,7 +738,7 @@ function endDrag() {
     // Resume animation with adjusted timeScale and smooth transition
     gsap.to(tween, {
       timeScale: currentDirection,
-      duration: 0.5, // Smooth transition duration
+      duration: 1, // Smooth transition duration
       onComplete: () => {
         // Adjust tween progress after transition
         tween.progress(tween.progress() - dragPercentage);
@@ -685,8 +748,6 @@ function endDrag() {
     });
   }
 }
-
-
 
 // Event listeners for mouse events
 window.addEventListener('mousedown', startDrag);
@@ -707,10 +768,78 @@ window.addEventListener("scroll", function () {
 
   gsap.to(tween, {
     timeScale: isScrollingDown ? 1 : -1,
-    duration: 0.5, // Smooth transition duration
+    duration: 1, // Smooth transition duration
   });
 
   currentScroll = window.pageYOffset;
 });
 
 
+
+const secondaryVideo = document.getElementById('bgVideo-foto');
+
+const pauseSecondaryVideo = () => {
+  secondaryVideo.pause();
+};
+const playSecondaryVideo = () => {
+  secondaryVideo.play();
+};
+let isSecondaryVideoPlaying = false;
+let mouseXSecondary = 0;
+let mouseYSecondary = 0;
+let prevMouseXSecondary = 0;
+let prevMouseYSecondary = 0;
+let mouseVelocitySecondary = 0;
+window.addEventListener('mousemove', (event) => {
+  mouseXSecondary = event.clientX;
+  mouseYSecondary = event.clientY;
+});
+window.addEventListener('mouseout', () => {
+  pauseSecondaryVideo();
+  isSecondaryVideoPlaying = false;
+});
+const calculateMouseVelocitySecondary = () => {
+  const deltaXSecondary = mouseXSecondary - prevMouseXSecondary;
+  const deltaYSecondary = mouseYSecondary - prevMouseYSecondary;
+  const distanceSecondary = Math.sqrt(deltaXSecondary * deltaXSecondary + deltaYSecondary * deltaYSecondary);
+  const elapsedTimeSecondary = 0.016;
+  mouseVelocitySecondary = distanceSecondary / elapsedTimeSecondary;
+  prevMouseXSecondary = mouseXSecondary;
+  prevMouseYSecondary = mouseYSecondary;
+};
+const updatePlaybackRateSecondary = () => {
+  const maxVelocitySecondary = 100;
+  const minPlaybackRateSecondary = 0.5;
+  const maxPlaybackRateSecondary = 1;
+  calculateMouseVelocitySecondary();
+  const newPlaybackRateSecondary = minPlaybackRateSecondary + (mouseVelocitySecondary / maxVelocitySecondary) * (maxPlaybackRateSecondary - minPlaybackRateSecondary) * 0.05;
+  gsap.to(secondaryVideo, { playbackRate: newPlaybackRateSecondary, duration: 0.5 });
+};
+const handleMouseMovementSecondary = () => {
+  if (!isSecondaryVideoPlaying) {
+    playSecondaryVideo();
+    isSecondaryVideoPlaying = true;
+  }
+  clearTimeout(window.mouseMoveTimeoutSecondary);
+  window.mouseMoveTimeoutSecondary = setTimeout(() => {
+    pauseSecondaryVideo();
+    isSecondaryVideoPlaying = false;
+  }, 100);
+};
+window.addEventListener('mousemove', () => {
+  updatePlaybackRateSecondary();
+  handleMouseMovementSecondary();
+});
+const backgroundVideoSecondary = document.getElementById('bgVideo-foto');
+const pauseBackgroundVideoSecondary = () => {
+  backgroundVideoSecondary.pause();
+};
+const playBackgroundVideoSecondary = () => {
+  backgroundVideoSecondary.play();
+};
+window.addEventListener('touchstart', () => {
+  playBackgroundVideoSecondary();
+});
+window.addEventListener('touchend', () => {
+  pauseBackgroundVideoSecondary();
+});
