@@ -550,18 +550,12 @@ gsap.from(".below-sideways-moving-text", {
   stagger: 0.5,
 });
 
-let cardDuration
-if (window.innerWidth <= 768) {
-  cardDuration = 2;
-} else {
-  cardDuration = 1;
-}
 
-let cardStagger
+let cardSmth
 if (window.innerWidth <= 768) {
-  cardStagger = 6;
+  cardSmth = 6;
 } else {
-  cardStagger = 1;
+  cardSmth = 1;
 }
 
 
@@ -572,14 +566,14 @@ gsap.to(".flying-card", {
   scrollTrigger: {
     trigger: ".third-container",
     start: "top",
-    end: () => "+=" + (containerWidth),
+    end: () => "+=" + (containerWidth * cardSmth),
     scrub: 1,
     pin: ".third-container"
   },
   yPercent: 0,
   ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
-  duration: cardDuration,
-  stagger: cardStagger,
+  duration: 1,
+  stagger: 1,
 });
 
 
@@ -589,14 +583,14 @@ gsap.to(".flying-card1", {
   scrollTrigger: {
     trigger: ".third-container1",
     start: "top",
-    end: () => "+=" + (containerWidth * 2),
+    end: () => "+=" + (containerWidth * cardSmth),
     scrub: 1,
     pin: ".third-container1"
   },
   yPercent: 0,
   ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
-  duration: cardDuration,
-  stagger: cardStagger,
+  duration: 1,
+  stagger: 1,
 });
 
 
@@ -768,7 +762,6 @@ window.addEventListener("scroll", function () {
 
   gsap.to(tween, {
     timeScale: isScrollingDown ? 1 : -1,
-    duration: 1, // Smooth transition duration
   });
 
   currentScroll = window.pageYOffset;
