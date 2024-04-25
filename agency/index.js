@@ -598,7 +598,7 @@ gsap.to(".flying-card1", {
 gsap.from(".title4", {
   scrollTrigger: {
     trigger: ".title4",
-    toggleActions: "restart none restart restart"
+    toggleActions: "restart none restart reverse"
   },
   yPercent: 100,
   duration: 0.4,
@@ -609,7 +609,7 @@ gsap.from(".title4", {
 gsap.from(".title41", {
   scrollTrigger: {
     trigger: ".title41",
-    toggleActions: "restart none restart restart"
+    toggleActions: "restart none restart reverse"
   },
   yPercent: 100,
   duration: 0.4,
@@ -620,7 +620,29 @@ gsap.from(".title41", {
 gsap.from(".title42", {
   scrollTrigger: {
     trigger: ".title42",
-    toggleActions: "restart none restart restart"
+    toggleActions: "restart none restart reverse"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
+gsap.from(".title43", {
+  scrollTrigger: {
+    trigger: ".title43",
+    toggleActions: "restart none restart reverse"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
+gsap.from(".title44", {
+  scrollTrigger: {
+    trigger: ".title44",
+    toggleActions: "restart none restart reverse"
   },
   yPercent: 100,
   duration: 0.4,
@@ -665,12 +687,20 @@ let currentDirection = 1; // Default direction
 // Calculate total width of marquee content
 const marqueeWidth = document.querySelector('.marquee-inner').offsetWidth;
 
+let scrollImageEx
+if (window.innerWidth <= 768) {
+  scrollImageEx = 9;
+} else {
+  scrollImageEx = 15;
+}
+
+
 // Function to create GSAP animation
 function createAnimation() {
   tween = gsap.to(".marquee-inner", {
     x: -marqueeWidth / 2, // Initial position
     repeat: -1, // Repeat indefinitely
-    duration: 15, // Adjust duration as needed
+    duration: scrollImageEx, // Adjust duration as needed
     ease: "linear",
   }).totalProgress(0.5);
 }
@@ -678,25 +708,7 @@ function createAnimation() {
 // Initialize animation
 createAnimation();
 
-// Pause animation on mouseenter with transition
-document.querySelectorAll('.marquee-part').forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    gsap.to(tween, {
-      timeScale: 0,
-      duration: 1, // Adjust transition duration as needed
-    });
-  });
-});
 
-// Resume animation on mouseleave with transition
-document.querySelectorAll('.marquee-part').forEach(item => {
-  item.addEventListener('mouseleave', () => {
-    gsap.to(tween, {
-      timeScale: currentDirection,
-      duration: 1, // Adjust transition duration as needed
-    });
-  });
-});
 
 // Start dragging
 function startDrag(event) {
@@ -732,7 +744,7 @@ function endDrag() {
     // Resume animation with adjusted timeScale and smooth transition
     gsap.to(tween, {
       timeScale: currentDirection,
-      duration: 1, // Smooth transition duration
+      duration: 0.7, // Smooth transition duration
       onComplete: () => {
         // Adjust tween progress after transition
         tween.progress(tween.progress() - dragPercentage);
@@ -835,4 +847,294 @@ window.addEventListener('touchstart', () => {
 });
 window.addEventListener('touchend', () => {
   pauseBackgroundVideoSecondary();
+});
+
+
+
+
+
+
+
+
+//scrolling 3 things
+
+
+
+
+
+
+
+
+//1nd
+
+let verticalPosition = 0;
+let scrollingDownIs = true;
+let animationProgression;
+let isUserInteracting = false;
+let initialInteractionX = 0;
+let interactionPercent = 100;
+let currentOrientation = 1;
+
+function initializeAnimation() {
+  const contentWidth = document.querySelector('.marquee-inner2').offsetWidth;
+
+  animationProgression = gsap.to(".marquee-inner2", {
+    x: -contentWidth / 2,
+    repeat: -1,
+    duration: 15,
+    ease: "linear",
+  }).totalProgress(0.5);
+}
+
+window.addEventListener('load', initializeAnimation);
+
+function startInteraction(event) {
+  if (event.target.classList.contains('marquee-part3')) {
+    isUserInteracting = true;
+    initialInteractionX = event.clientX || event.touches[0].clientX;
+    gsap.set(animationProgression, { timeScale: 0 });
+  }
+}
+
+function continueInteraction(event) {
+  if (isUserInteracting) {
+    const clientX = event.clientX || event.touches[0].clientX;
+    const interactionDistance = clientX - initialInteractionX;
+    let sensitivity = 1;
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      sensitivity = 6;
+    }
+    interactionPercent = interactionDistance / (window.innerWidth * sensitivity);
+    animationProgression.progress(animationProgression.progress() - interactionPercent);
+    initialInteractionX = clientX;
+  }
+}
+
+function endInteraction() {
+  if (isUserInteracting) {
+    isUserInteracting = false;
+    currentOrientation = interactionPercent > 0 ? -1 : 1;
+    gsap.to(animationProgression, {
+      timeScale: currentOrientation,
+      duration: 0.7,
+      onComplete: () => {
+        animationProgression.progress(animationProgression.progress() - interactionPercent);
+        interactionPercent = 0;
+      }
+    });
+  }
+}
+
+window.addEventListener('mousedown', startInteraction);
+window.addEventListener('mousemove', continueInteraction);
+window.addEventListener('mouseup', endInteraction);
+
+window.addEventListener('touchstart', startInteraction);
+window.addEventListener('touchmove', continueInteraction);
+window.addEventListener('touchend', endInteraction);
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > verticalPosition) {
+    scrollingDownIs = true;
+  } else {
+    scrollingDownIs = false;
+  }
+
+  gsap.to(animationProgression, {
+    timeScale: scrollingDownIs ? -1 : 1,
+  });
+
+  verticalPosition = window.pageYOffset;
+});
+
+
+
+
+
+
+
+
+
+
+//2nd
+
+let currentPosition = 0;
+let isMovingForward = true;
+let animationSequence;
+let isDraggingNow = false;
+let initialDragPos = 0;
+let currentDragPercent = 100; // Updated variable name
+let currentMotionDirection = 1; // Default direction
+
+// Function to start GSAP animation
+function initializeSequence() {
+  // Calculate total width of marquee content
+  const marqueeWidth = document.querySelector('.marquee-inner3').offsetWidth;
+
+  animationSequence = gsap.to(".marquee-inner3", {
+    x: -marqueeWidth / 2, // Initial position
+    repeat: -1, // Repeat indefinitely
+    duration: 15, // Adjust duration as needed
+    ease: "linear",
+  }).totalProgress(0.5);
+}
+
+// Initialize animation after the DOM is fully loaded
+window.addEventListener('load', initializeSequence);
+
+// Pause animation on mouseenter with transition
+
+
+// Start dragging
+function beginDragging(event) {
+  if (event.target.classList.contains('marquee-part4')) {
+    isDraggingNow = true;
+    initialDragPos = event.clientX || event.touches[0].clientX;
+    gsap.set(animationSequence, { timeScale: 0 }); // Pause animation when dragging starts
+  }
+}
+
+// Continue dragging
+function dragEvent(event) {
+  if (isDraggingNow) {
+    const clientX = event.clientX || event.touches[0].clientX;
+    const dragDistance = clientX - initialDragPos;
+    let sensitivity = 1; // Default sensitivity for desktop
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      sensitivity = 6; // High sensitivity for mobile devices
+    }
+    currentDragPercent = dragDistance / (window.innerWidth * sensitivity); // Updated variable name
+    animationSequence.progress(animationSequence.progress() - currentDragPercent); // Adjust animation progress based on drag distance
+    initialDragPos = clientX;
+  }
+}
+
+// End dragging
+function endDraggingEvent() {
+  if (isDraggingNow) {
+    isDraggingNow = false;
+    // Calculate the direction based on drag percentage and reverse it
+    currentMotionDirection = currentDragPercent > 0 ? -1 : 1;
+    // Resume animation with adjusted timeScale and smooth transition
+    gsap.to(animationSequence, {
+      timeScale: currentMotionDirection,
+      duration: 0.7, // Smooth transition duration
+      onComplete: () => {
+        // Adjust tween progress after transition
+        animationSequence.progress(animationSequence.progress() - currentDragPercent);
+        // Reset drag percentage
+        currentDragPercent = 0;
+      }
+    });
+  }
+}
+
+// Event listeners for mouse events
+window.addEventListener('mousedown', beginDragging);
+window.addEventListener('mousemove', dragEvent);
+window.addEventListener('mouseup', endDraggingEvent);
+
+// Event listeners for touch events
+window.addEventListener('touchstart', beginDragging);
+window.addEventListener('touchmove', dragEvent);
+window.addEventListener('touchend', endDraggingEvent);
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > currentPosition) {
+    isMovingForward = true;
+  } else {
+    isMovingForward = false;
+  }
+
+  gsap.to(animationSequence, {
+    timeScale: isMovingForward ? 1 : -1,
+  });
+
+  currentPosition = window.pageYOffset;
+});
+
+
+
+//3rd
+
+let yPosCustom = 0;
+let isScrollingForwardCustom = true;
+let tweenAnimationCustom;
+let isDraggingCustom = false;
+let initialDragXCustom = 0;
+let dragPercentCustom = 100;
+let currentDirectionCustom = 1;
+
+function initiateTweenCustom() {
+  const marqueeWidthCustom = document.querySelector('.marquee-inner4').offsetWidth;
+
+  tweenAnimationCustom = gsap.to(".marquee-inner4", {
+    x: -marqueeWidthCustom / 2,
+    repeat: -1,
+    duration: 15,
+    ease: "linear",
+  }).totalProgress(0.5);
+}
+
+window.addEventListener('load', initiateTweenCustom);
+
+
+
+function beginDragCustom(event) {
+  if (event.target.classList.contains('marquee-part5')) {
+    isDraggingCustom = true;
+    initialDragXCustom = event.clientX || event.touches[0].clientX;
+    gsap.set(tweenAnimationCustom, { timeScale: 0 });
+  }
+}
+
+function dragCustom(event) {
+  if (isDraggingCustom) {
+    const clientXCustom = event.clientX || event.touches[0].clientX;
+    const dragDistanceCustom = clientXCustom - initialDragXCustom;
+    let sensitivityCustom = 1;
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      sensitivityCustom = 6;
+    }
+    dragPercentCustom = dragDistanceCustom / (window.innerWidth * sensitivityCustom);
+    tweenAnimationCustom.progress(tweenAnimationCustom.progress() - dragPercentCustom);
+    initialDragXCustom = clientXCustom;
+  }
+}
+
+function endDraggingCustom() {
+  if (isDraggingCustom) {
+    isDraggingCustom = false;
+    currentDirectionCustom = dragPercentCustom > 0 ? -1 : 1;
+    gsap.to(tweenAnimationCustom, {
+      timeScale: currentDirectionCustom,
+      duration: 1,
+      onComplete: () => {
+        tweenAnimationCustom.progress(tweenAnimationCustom.progress() - dragPercentCustom);
+        dragPercentCustom = 0;
+      }
+    });
+  }
+}
+
+window.addEventListener('mousedown', beginDragCustom);
+window.addEventListener('mousemove', dragCustom);
+window.addEventListener('mouseup', endDraggingCustom);
+
+window.addEventListener('touchstart', beginDragCustom);
+window.addEventListener('touchmove', dragCustom);
+window.addEventListener('touchend', endDraggingCustom);
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > yPosCustom) {
+    isScrollingForwardCustom = true;
+  } else {
+    isScrollingForwardCustom = false;
+  }
+
+  gsap.to(tweenAnimationCustom, {
+    timeScale: isScrollingForwardCustom ? -1 : 1,
+  });
+
+  yPosCustom = window.pageYOffset;
 });
