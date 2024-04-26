@@ -650,6 +650,16 @@ gsap.from(".title44", {
   stagger: 0.2,
 });
 
+gsap.from(".title45", {
+  scrollTrigger: {
+    trigger: ".title45",
+    toggleActions: "restart none restart reverse"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
 
 gsap.from(".fourth-text", {
   delay: 0.5,
