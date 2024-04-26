@@ -716,10 +716,10 @@ body {
 }
 
 .marquee {
-  margin-top: 5vh;
+  margin-top: 30vh;
   position: relative;
   padding: 30px 0;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -737,8 +737,8 @@ body {
 
 .marquee-part {
   display: flex;
-  height: 25rem;
-  width: 25rem;
+  height: 23rem;
+  width: 23rem;
   margin-left: 2rem;
   background-color: rgb(134, 13, 13);
   z-index: 90;
@@ -758,7 +758,7 @@ body {
 }
 
 .size-scroll-foto {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -821,13 +821,19 @@ body {
 }
 
 .benefits-card-image {
-  background-color: aqua;
-  width: 100px;
-  height: 100px;
+  background-color: black;
+  border: 1px solid rgba(99, 99, 99, 1);
+  border-radius: 13px;
+  width: 130px;
+  height: 130px;
 }
 
 .benefits-content {
   padding: 20px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .benefits-container {
@@ -836,7 +842,25 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 1500px;
+  margin-top: 30vh;
+  margin-bottom: 15vh;
+  text-align: center;
 }
+
+.benefits-title{
+  font-size: 4rem;
+}
+
+.benefits-text-content{
+  font-size: 1.3rem;
+  width: 90%;
+  padding-bottom: 0.5rem;
+}
+
+
+
+
+
 
 
 .eleventh-container {
@@ -860,9 +884,10 @@ body {
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-top: 1px solid rgba(70, 70, 70, 1);
-  border-bottom: 1px solid rgba(70, 70, 70, 1);
-  background-color: forestgreen;
+  background-color: black;
+  box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px -1px 60px 60px rgba(0, 0, 0, 0.75);
 }
 
 
@@ -876,14 +901,22 @@ body {
 #marquee-part {
   display: flex;
   height: 4rem;
-  width: 10rem;
+  width: fit-content;
   margin-left: 2rem;
-  background-color: rgb(13, 45, 134);
+  background-color: black;
+  border: 1px solid rgba(99, 99, 99, 1);
+  border-radius: 13px;
   z-index: 90;
   border-radius: 13px;
   cursor: ew-resize;
   flex-direction: row;
   align-items: center;
+  white-space: nowrap;  
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 #marquee-part {
@@ -897,7 +930,106 @@ body {
   /* Internet Explorer/Edge */
 }
 
+.slider-benefits-container{
+ margin-top: 30vh;
+ margin-bottom: 15vh;
+}
 
+
+.twelft-container {
+  background-size: 10rem 10rem;
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+  z-index: 90;
+  background-color: black;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.Choose-card {
+  width: 300px;
+  margin: 10px;
+  height: auto;
+  border-radius: 13px;
+  box-shadow: 0 0 10px rgba(151, 59, 59, 0.2);
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid rgb(255, 0, 0)
+}
+
+.Choose-card:nth-child(3) {
+  border: 1px solid rgb(0, 225, 0)
+}
+
+
+.Choose-content {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.Choose-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15vh;
+  text-align: center;
+  margin-top: 30vh;
+}
+
+.Choose-title{
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.Choose-text-content{
+  font-size: 1.3rem;
+  border-top: 1px solid rgba(70, 70, 70, 1);
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.choose-first-title{
+  font-family: "NewYork";
+  font-size: 3.5rem;
+  margin-bottom: -0.7rem;
+}
+
+.choose-first-title-content{
+  font-size: 1.5rem;
+  font-family: "SfItalic";
+  margin-bottom: 0.5rem;
+}
+
+.Choose-text-content-title{
+  font-size: 2rem;
+  font-family: "Sf";
+}
+
+.Choose-text-content-content{
+  font-family: "SfItalic";
+  font-size: 2rem;  
+}
 
 
 
