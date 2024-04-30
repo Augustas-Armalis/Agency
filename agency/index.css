@@ -847,11 +847,11 @@ body {
   text-align: center;
 }
 
-.benefits-title{
+.benefits-title {
   font-size: 4rem;
 }
 
-.benefits-text-content{
+.benefits-text-content {
   font-size: 1.3rem;
   width: 90%;
   padding-bottom: 0.5rem;
@@ -911,7 +911,7 @@ body {
   cursor: ew-resize;
   flex-direction: row;
   align-items: center;
-  white-space: nowrap;  
+  white-space: nowrap;
   justify-content: center;
   text-align: center;
   font-size: 2rem;
@@ -930,9 +930,9 @@ body {
   /* Internet Explorer/Edge */
 }
 
-.slider-benefits-container{
- margin-top: 30vh;
- margin-bottom: 15vh;
+.slider-benefits-container {
+  margin-top: 30vh;
+  margin-bottom: 15vh;
 }
 
 
@@ -967,8 +967,8 @@ body {
   border: 1px solid rgb(255, 0, 0)
 }
 
-.Choose-card:nth-child(3) {
-  border: 1px solid rgb(0, 225, 0)
+.Choose-card:nth-child(4) {
+  border: 1px solid rgb(0, 255, 0)
 }
 
 
@@ -989,16 +989,16 @@ body {
   margin-top: 30vh;
 }
 
-.Choose-title{
+.Choose-title {
   width: 100%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-.Choose-text-content{
+.Choose-text-content {
   font-size: 1.3rem;
   border-top: 1px solid rgba(70, 70, 70, 1);
-  width: 100%;
+  width: 90%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: flex;
@@ -1009,27 +1009,232 @@ body {
   gap: 0.2rem;
 }
 
-.choose-first-title{
+.choose-first-title {
   font-family: "NewYork";
   font-size: 3.5rem;
   margin-bottom: -0.7rem;
 }
 
-.choose-first-title-content{
+.choose-first-title-content {
   font-size: 1.5rem;
   font-family: "SfItalic";
   margin-bottom: 0.5rem;
 }
 
-.Choose-text-content-title{
+.Choose-text-content-title {
   font-size: 2rem;
   font-family: "Sf";
 }
 
-.Choose-text-content-content{
+.Choose-text-content-content {
   font-family: "SfItalic";
-  font-size: 2rem;  
+  font-size: 2rem;
 }
+
+
+
+
+
+
+
+
+
+
+.fourth-title,
+.fourth-title1 {
+  align-self: baseline;
+  position: absolute;
+  z-index: 90;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+}
+
+.load-in-container {
+  overflow: hidden;
+  display: flex;
+  cursor: default;
+
+}
+
+.load-in-container p {
+  font-size: 2rem;
+  margin: 0;
+  line-height: auto;
+  cursor: default;
+}
+
+
+.twelft-container {
+  background-size: 10rem 10rem;
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+  z-index: 90;
+  background-color: black;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.Choose-card {
+  width: 330px;
+  margin: 20px;
+  height: auto;
+  border-radius: 13px;
+  box-shadow: 0 0 10px rgba(151, 59, 59, 0.2);
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid rgb(255, 0, 0)
+}
+
+.Choose-card:nth-child(5) {
+  border: 1px solid rgba(99, 99, 99, 1);
+}
+
+
+.Choose-content {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.Choose-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15vh;
+  text-align: center;
+  margin-top: 30vh;
+}
+
+.Choose-title {
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.Choose-text-content {
+  font-size: 1.3rem;
+  border-top: 1px solid rgba(70, 70, 70, 1);
+  width: 90%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.choose-first-title {
+  font-family: "NewYork";
+  font-size: 3.5rem;
+  margin-bottom: -0.7rem;
+}
+
+.choose-first-title-content {
+  font-size: 1.5rem;
+  font-family: "SfItalic";
+  margin-bottom: 0.5rem;
+}
+
+.Choose-text-content-title {
+  font-size: 2rem;
+  font-family: "Sf";
+}
+
+.Choose-text-content-content {
+  font-family: "SfItalic";
+  font-size: 2rem;
+}
+
+
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.switch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('');
+  background-size: cover;
+  transition: background-color 0.4s;
+  border-radius: 34px;
+  border: 1px solid lightgray;
+  /* Adjusted border color */
+}
+
+.switch::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: transform 0.4s, background-color 0.4s;
+  border: 1px solid white;
+}
+
+.checkbox:checked+.switch {
+  background-color: lightgreen;
+  /* Adjusted background color when checked */
+}
+
+.checkbox:checked+.switch::before {
+  transform: translateX(26px);
+  background-color: white;
+}
+
+.container {
+  width: 200px;
+  height: 100px;
+  background-color: lightgray;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
