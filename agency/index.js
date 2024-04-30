@@ -661,6 +661,28 @@ gsap.from(".title45", {
   stagger: 0.2,
 });
 
+gsap.from(".title46", {
+  scrollTrigger: {
+    trigger: ".title46",
+    toggleActions: "restart none restart reverse"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
+gsap.from(".title47", {
+  scrollTrigger: {
+    trigger: ".title47",
+    toggleActions: "restart none restart reverse"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
 gsap.from(".fourth-text", {
   delay: 0.5,
   scrollTrigger: {
@@ -1147,4 +1169,108 @@ window.addEventListener("scroll", function () {
   });
 
   yPosCustom = window.pageYOffset;
+});
+
+
+
+
+
+
+
+
+
+const toggle = document.getElementById('toggle');
+const container1 = document.getElementById('container1');
+const container2 = document.getElementById('container2');
+const container3 = document.getElementById('container3');
+const container4 = document.getElementById('container4');
+
+// Initially hide containers 2 and 4
+container2.style.opacity = 0;
+container4.style.opacity = 0;
+
+toggle.addEventListener('change', function () {
+  if (this.checked) {
+    // Toggle on: Fade out containers 1 and 3, then fade in containers 2 and 4
+    gsap.to(container1, {
+      opacity: 0, duration: 0.5, onComplete: () => {
+        container1.classList.add('hidden');
+        gsap.to(container2, { opacity: 1, duration: 0.5 });
+        container2.classList.remove('hidden');
+      }
+    });
+    gsap.to(container3, {
+      opacity: 0, duration: 0.5, onComplete: () => {
+        container3.classList.add('hidden');
+        gsap.to(container4, { opacity: 1, duration: 0.5 });
+        container4.classList.remove('hidden');
+      }
+    });
+  } else {
+    // Toggle off: Fade out containers 2 and 4, then fade in containers 1 and 3
+    gsap.to(container2, {
+      opacity: 0, duration: 0.5, onComplete: () => {
+        container2.classList.add('hidden');
+        gsap.to(container1, { opacity: 1, duration: 0.5 });
+        container1.classList.remove('hidden');
+      }
+    });
+    gsap.to(container4, {
+      opacity: 0, duration: 0.5, onComplete: () => {
+        container4.classList.add('hidden');
+        gsap.to(container3, { opacity: 1, duration: 0.5 });
+        container3.classList.remove('hidden');
+      }
+    });
+  }
+});
+
+
+
+
+
+const newToggle = document.getElementById('new-toggle');
+const newContainer1 = document.getElementById('new-container1');
+const newContainer2 = document.getElementById('new-container2');
+const newContainer3 = document.getElementById('new-container3');
+const newContainer4 = document.getElementById('new-container4');
+
+// Initially hide containers 2 and 4
+newContainer2.style.opacity = 0;
+newContainer4.style.opacity = 0;
+
+newToggle.addEventListener('change', function () {
+  if (this.checked) {
+    // Toggle on: Fade out containers 1 and 3, then fade in containers 2 and 4
+    gsap.to(newContainer1, {
+      opacity: 0, duration: 0.5, onComplete: () => {
+        newContainer1.classList.add('hidden');
+        gsap.to(newContainer2, { opacity: 1, duration: 0.5 });
+        newContainer2.classList.remove('hidden');
+      }
+    });
+    gsap.to(newContainer3, {
+      opacity: 0, duration: 0.5, onComplete: () => {
+        newContainer3.classList.add('hidden');
+        gsap.to(newContainer4, { opacity: 1, duration: 0.5 });
+        newContainer4.classList.remove('hidden');
+      }
+    });
+  } else {
+    // Toggle off: Fade out containers 2 and 4, then fade in containers 1 and 3
+    gsap.to(newContainer2, {
+      opacity: 0, duration: 0.5, onComplete: () => {
+        newContainer2.classList.add('hidden');
+        gsap.to(newContainer1, { opacity: 1, duration: 0.5 });
+        newContainer1.classList.remove('hidden');
+      }
+    });
+    gsap.to(newContainer4, {
+      opacity: 0, duration: 0.5, onComplete: () => {
+        newContainer4.classList.add('hidden');
+        gsap.to(newContainer3, { opacity: 1, duration: 0.5 });
+        newContainer3.classList.remove('hidden');
+      }
+    });
+  }
 });
