@@ -639,7 +639,6 @@ body {
 .text-line {
   font-size: 2.5vw;
   font-family: "SfItalic";
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3), 0 0 45px rgba(255, 255, 255, 0.3);
   cursor: default;
 }
 
@@ -713,6 +712,7 @@ body {
   font-family: "NewYork";
   padding-bottom: 2rem;
   cursor: default;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3), 0 0 45px rgba(255, 255, 255, 0.3);
 }
 
 .down-card {
@@ -1329,6 +1329,16 @@ body {
 
 
 @media screen and (max-width: 1024px) {
+
+  #SfL:hover {
+    font-family: "Sf";
+    text-shadow: none;
+  }
+
+  #newYorkL:hover {
+    font-family: "NewYork";
+    text-shadow: none;
+  }
 
   .marquee-part {
     height: 17rem;
