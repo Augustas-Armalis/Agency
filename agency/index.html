@@ -11,6 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 </head>
 
 <body>
@@ -75,7 +76,7 @@
   </nav>
 
   <div class="landing-main-page">
-    <div class="load-in-container" style="position: absolute">
+    <div class="load-in-container">
       <p class="split">L</p>
       <p class="split">o</p>
       <p class="split">r</p>
@@ -298,19 +299,19 @@
         </video>
         <a href="#" class="more-images">more</a>
         <div class="marquee-inner">
-          <div class="marquee-part">1</div>
-          <div class="marquee-part">2</div>
-          <div class="marquee-part">3</div>
-          <div class="marquee-part">4</div>
-          <div class="marquee-part">5</div>
-          <div class="marquee-part">6</div>
+          <div class="marquee-part" id="design-example-foto1"></div>
+          <div class="marquee-part" id="design-example-foto2"></div>
+          <div class="marquee-part" id="design-example-foto3"></div>
+          <div class="marquee-part" id="design-example-foto4"></div>
+          <div class="marquee-part" id="design-example-foto5"></div>
+          <div class="marquee-part" id="design-example-foto6"></div>
           <!-- Duplicate content -->
-          <div class="marquee-part">1</div>
-          <div class="marquee-part">2</div>
-          <div class="marquee-part">3</div>
-          <div class="marquee-part">4</div>
-          <div class="marquee-part">5</div>
-          <div class="marquee-part">6</div>
+          <div class="marquee-part" id="design-example-foto1"></div>
+          <div class="marquee-part" id="design-example-foto2"></div>
+          <div class="marquee-part" id="design-example-foto3"></div>
+          <div class="marquee-part" id="design-example-foto4"></div>
+          <div class="marquee-part" id="design-example-foto5"></div>
+          <div class="marquee-part" id="design-example-foto6"></div>
         </div>
       </div>
 
@@ -423,24 +424,24 @@
     <div class="size-scroll-foto">
 
       <div class="marquee">
-        <video autoplay muted loop id="bgVideo-foto">
+        <video autoplay muted loop id="bgVideo-design">
           <source src="images/background video.mp4" type="video/mp4">
         </video>
         <a href="#" class="more-images">more</a>
         <div class="marquee-inner">
-          <div class="marquee-part">1</div>
-          <div class="marquee-part">2</div>
-          <div class="marquee-part">3</div>
-          <div class="marquee-part">4</div>
-          <div class="marquee-part">5</div>
-          <div class="marquee-part">6</div>
+          <div class="marquee-part" id="web-example-foto1"></div>
+          <div class="marquee-part" id="web-example-foto2"></div>
+          <div class="marquee-part" id="web-example-foto3"></div>
+          <div class="marquee-part" id="web-example-foto4"></div>
+          <div class="marquee-part" id="web-example-foto5"></div>
+          <div class="marquee-part" id="web-example-foto6"></div>
           <!-- Duplicate content -->
-          <div class="marquee-part">1</div>
-          <div class="marquee-part">2</div>
-          <div class="marquee-part">3</div>
-          <div class="marquee-part">4</div>
-          <div class="marquee-part">5</div>
-          <div class="marquee-part">6</div>
+          <div class="marquee-part" id="web-example-foto1"></div>
+          <div class="marquee-part" id="web-example-foto2"></div>
+          <div class="marquee-part" id="web-example-foto3"></div>
+          <div class="marquee-part" id="web-example-foto4"></div>
+          <div class="marquee-part" id="web-example-foto5"></div>
+          <div class="marquee-part" id="web-example-foto6"></div>
         </div>
       </div>
 
@@ -474,8 +475,21 @@
 
       <div class="benefits-card">
         <div class="benefits-card-image">
-          <img src="">
+          <div id="benefits-lottie-animation1" style="width: 100px; height: 100px;"></div>
         </div>
+
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('benefits-lottie-animation1'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: "images/Animation - 1714556024344.json" // Path to your Lottie animation file
+          });
+
+          animation.setSpeed(0.5);
+        </script>
+
         <div class="benefits-content">
           <p class="benefits-title" id="newYork">lorem</h3>
           <p class="benefits-text-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quis deleniti
@@ -485,8 +499,21 @@
 
       <div class="benefits-card">
         <div class="benefits-card-image">
-          <img src="">
+          <div id="benefits-lottie-animation2" style="width: 100px; height: 100px;"></div>
         </div>
+
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('benefits-lottie-animation2'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: "images/Animation - 1714556024344.json" // Path to your Lottie animation file
+          });
+
+          animation.setSpeed(0.5);
+        </script>
+
         <div class="benefits-content">
           <p class="benefits-title" id="newYork">lorem</h3>
           <p class="benefits-text-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quis deleniti
@@ -496,8 +523,21 @@
 
       <div class="benefits-card">
         <div class="benefits-card-image">
-          <img src="">
+          <div id="benefits-lottie-animation3" style="width: 100px; height: 100px;"></div>
         </div>
+
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('benefits-lottie-animation3'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: "images/Animation - 1714556024344.json" // Path to your Lottie animation file
+          });
+
+          animation.setSpeed(0.5);
+        </script>
+
         <div class="benefits-content">
           <p class="benefits-title" id="newYork">lorem</h3>
           <p class="benefits-text-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quis deleniti
@@ -507,8 +547,21 @@
 
       <div class="benefits-card">
         <div class="benefits-card-image">
-          <img src="">
+          <div id="benefits-lottie-animation4" style="width: 100px; height: 100px;"></div>
         </div>
+
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('benefits-lottie-animation4'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: "images/Animation - 1714556024344.json"
+          });
+
+          animation.setSpeed(0.5);
+        </script>
+
         <div class="benefits-content">
           <p class="benefits-title" id="newYork">lorem</h3>
           <p class="benefits-text-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quis deleniti
@@ -518,8 +571,21 @@
 
       <div class="benefits-card">
         <div class="benefits-card-image">
-          <img src="">
+          <div id="benefits-lottie-animation5" style="width: 100px; height: 100px;"></div>
         </div>
+
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('benefits-lottie-animation5'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: "images/Animation - 1714556024344.json"
+          });
+
+          animation.setSpeed(0.5);
+        </script>
+
         <div class="benefits-content">
           <p class="benefits-title" id="newYork">lorem</h3>
           <p class="benefits-text-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quis deleniti
@@ -529,8 +595,21 @@
 
       <div class="benefits-card">
         <div class="benefits-card-image">
-          <img src="">
+          <div id="benefits-lottie-animation6" style="width: 100px; height: 100px;"></div>
         </div>
+
+        <script>
+          var animation = lottie.loadAnimation({
+            container: document.getElementById('benefits-lottie-animation6'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: "images/Animation - 1714556024344.json"
+          });
+
+          animation.setSpeed(0.5);
+        </script>
+
         <div class="benefits-content">
           <p class="benefits-title" id="newYork">lorem</h3>
           <p class="benefits-text-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quis deleniti
@@ -675,7 +754,7 @@
 
     <div class="Choose-container">
 
-      <div class="Choose-card">
+      <div class="Choose-card" id="compare-card-1">
         <div class="Choose-content">
 
           <div class="Choose-title">
@@ -714,7 +793,7 @@
 
       </div>
 
-      <div class="Choose-card">
+      <div class="Choose-card" id="compare-card-2">
         <div class="Choose-content">
 
           <div class="Choose-title">
@@ -753,7 +832,7 @@
 
       </div>
 
-      <div class="Choose-card">
+      <div class="Choose-card" id="compare-card-3">
         <div class="Choose-content">
 
           <div class="Choose-title">
@@ -792,7 +871,7 @@
 
       </div>
 
-      <div class="Choose-card">
+      <div class="Choose-card" id="compare-card-4">
         <div class="Choose-content">
 
           <div class="Choose-title">
