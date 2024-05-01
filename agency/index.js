@@ -397,6 +397,10 @@ window.addEventListener('touchend', () => {
   pauseBackgroundVideo();
 });
 
+
+
+
+
 const spinningImg = document.querySelector('#spinning-img');
 const img = spinningImg.querySelector('img');
 const hoverTrigger = document.querySelector('#hover-trigger');
@@ -417,14 +421,15 @@ function changeSpeed1(speed) {
 }
 
 hoverTrigger.addEventListener('mouseenter', () => {
-  console.log("hover event triggered for the first set of code");
   changeSpeed1(4);
 });
 
 hoverTrigger.addEventListener('mouseleave', () => {
-  console.log("mouseleave event triggered for the first set of code");
   changeSpeed1(1);
 });
+
+
+
 
 const spinner = document.querySelector('#spinning-img1');
 const image = spinner.querySelector('img');
@@ -446,14 +451,672 @@ function changeSpeed2(speed) {
 }
 
 trigger.addEventListener('mouseenter', () => {
-  console.log("hover event triggered for the second set of code");
   changeSpeed2(4);
 });
 
 trigger.addEventListener('mouseleave', () => {
-  console.log("mouseleave event triggered for the second set of code");
   changeSpeed2(1);
 });
+
+
+
+
+
+// Copy 1
+const spinningImgPlans1 = document.querySelector('#plans-spinning-img1');
+const imgPlans1 = spinningImgPlans1.querySelector('img');
+const hoverTriggerPlans1 = document.querySelector('#plans-hover-trigger1');
+
+const initialRotationPlans1 = gsap.to(imgPlans1, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed3(speed) {
+  gsap.to(initialRotationPlans1, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans1.addEventListener('mouseenter', () => {
+  changeSpeed3(4);
+});
+
+hoverTriggerPlans1.addEventListener('mouseleave', () => {
+  changeSpeed3(1);
+});
+
+// Copy 2
+const spinningImgPlans2 = document.querySelector('#plans-spinning-img2');
+const imgPlans2 = spinningImgPlans2.querySelector('img');
+const hoverTriggerPlans2 = document.querySelector('#plans-hover-trigger2');
+
+const initialRotationPlans2 = gsap.to(imgPlans2, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed4(speed) {
+  gsap.to(initialRotationPlans2, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans2.addEventListener('mouseenter', () => {
+  changeSpeed4(4);
+});
+
+hoverTriggerPlans2.addEventListener('mouseleave', () => {
+  changeSpeed4(1);
+});
+
+// Copy 3
+const spinningImgPlans3 = document.querySelector('#plans-spinning-img3');
+const imgPlans3 = spinningImgPlans3.querySelector('img');
+const hoverTriggerPlans3 = document.querySelector('#plans-hover-trigger3');
+
+const initialRotationPlans3 = gsap.to(imgPlans3, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed5(speed) {
+  gsap.to(initialRotationPlans3, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans3.addEventListener('mouseenter', () => {
+  changeSpeed5(4);
+});
+
+hoverTriggerPlans3.addEventListener('mouseleave', () => {
+  changeSpeed5(1);
+});
+
+// Copy 4
+const spinningImgPlans4 = document.querySelector('#plans-spinning-img4');
+const imgPlans4 = spinningImgPlans4.querySelector('img');
+const hoverTriggerPlans4 = document.querySelector('#plans-hover-trigger4');
+
+const initialRotationPlans4 = gsap.to(imgPlans4, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed6(speed) {
+  gsap.to(initialRotationPlans4, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans4.addEventListener('mouseenter', () => {
+  changeSpeed6(4);
+});
+
+hoverTriggerPlans4.addEventListener('mouseleave', () => {
+  changeSpeed6(1);
+});
+
+// Copy 5
+const spinningImgPlans5 = document.querySelector('#plans-spinning-img5');
+const imgPlans5 = spinningImgPlans5.querySelector('img');
+const hoverTriggerPlans5 = document.querySelector('#plans-hover-trigger5');
+
+const initialRotationPlans5 = gsap.to(imgPlans5, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed7(speed) {
+  gsap.to(initialRotationPlans5, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans5.addEventListener('mouseenter', () => {
+  changeSpeed7(4);
+});
+
+hoverTriggerPlans5.addEventListener('mouseleave', () => {
+  changeSpeed7(1);
+});
+
+// Copy 6
+const spinningImgPlans6 = document.querySelector('#plans-spinning-img6');
+const imgPlans6 = spinningImgPlans6.querySelector('img');
+const hoverTriggerPlans6 = document.querySelector('#plans-hover-trigger6');
+
+const initialRotationPlans6 = gsap.to(imgPlans6, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed8(speed) {
+  gsap.to(initialRotationPlans6, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans6.addEventListener('mouseenter', () => {
+  changeSpeed8(4);
+});
+
+hoverTriggerPlans6.addEventListener('mouseleave', () => {
+  changeSpeed8(1);
+});
+
+// Copy 7
+const spinningImgPlans7 = document.querySelector('#plans-spinning-img7');
+const imgPlans7 = spinningImgPlans7.querySelector('img');
+const hoverTriggerPlans7 = document.querySelector('#plans-hover-trigger7');
+
+const initialRotationPlans7 = gsap.to(imgPlans7, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed9(speed) {
+  gsap.to(initialRotationPlans7, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans7.addEventListener('mouseenter', () => {
+  changeSpeed9(4);
+});
+
+hoverTriggerPlans7.addEventListener('mouseleave', () => {
+  changeSpeed9(1);
+});
+
+// Copy 8
+const spinningImgPlans8 = document.querySelector('#plans-spinning-img8');
+const imgPlans8 = spinningImgPlans8.querySelector('img');
+const hoverTriggerPlans8 = document.querySelector('#plans-hover-trigger8');
+
+const initialRotationPlans8 = gsap.to(imgPlans8, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed10(speed) {
+  gsap.to(initialRotationPlans8, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans8.addEventListener('mouseenter', () => {
+  changeSpeed10(4);
+});
+
+hoverTriggerPlans8.addEventListener('mouseleave', () => {
+  changeSpeed10(1);
+});
+
+// Copy 9
+const spinningImgPlans9 = document.querySelector('#plans-spinning-img9');
+const imgPlans9 = spinningImgPlans9.querySelector('img');
+const hoverTriggerPlans9 = document.querySelector('#plans-hover-trigger9');
+
+const initialRotationPlans9 = gsap.to(imgPlans9, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed11(speed) {
+  gsap.to(initialRotationPlans9, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans9.addEventListener('mouseenter', () => {
+  changeSpeed11(4);
+});
+
+hoverTriggerPlans9.addEventListener('mouseleave', () => {
+  changeSpeed11(1);
+});
+
+// Copy 10
+const spinningImgPlans10 = document.querySelector('#plans-spinning-img10');
+const imgPlans10 = spinningImgPlans10.querySelector('img');
+const hoverTriggerPlans10 = document.querySelector('#plans-hover-trigger10');
+
+const initialRotationPlans10 = gsap.to(imgPlans10, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed12(speed) {
+  gsap.to(initialRotationPlans10, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans10.addEventListener('mouseenter', () => {
+  changeSpeed12(4);
+});
+
+hoverTriggerPlans10.addEventListener('mouseleave', () => {
+  changeSpeed12(1);
+});
+
+// Copy 11
+const spinningImgPlans11 = document.querySelector('#plans-spinning-img11');
+const imgPlans11 = spinningImgPlans11.querySelector('img');
+const hoverTriggerPlans11 = document.querySelector('#plans-hover-trigger11');
+
+const initialRotationPlans11 = gsap.to(imgPlans11, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed13(speed) {
+  gsap.to(initialRotationPlans11, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans11.addEventListener('mouseenter', () => {
+  changeSpeed13(4);
+});
+
+hoverTriggerPlans11.addEventListener('mouseleave', () => {
+  changeSpeed13(1);
+});
+
+// Copy 12
+const spinningImgPlans12 = document.querySelector('#plans-spinning-img12');
+const imgPlans12 = spinningImgPlans12.querySelector('img');
+const hoverTriggerPlans12 = document.querySelector('#plans-hover-trigger12');
+
+const initialRotationPlans12 = gsap.to(imgPlans12, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed14(speed) {
+  gsap.to(initialRotationPlans12, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans12.addEventListener('mouseenter', () => {
+  changeSpeed14(4);
+});
+
+hoverTriggerPlans12.addEventListener('mouseleave', () => {
+  changeSpeed14(1);
+});
+
+// Copy 13
+const spinningImgPlans13 = document.querySelector('#plans-spinning-img13');
+const imgPlans13 = spinningImgPlans13.querySelector('img');
+const hoverTriggerPlans13 = document.querySelector('#plans-hover-trigger13');
+
+const initialRotationPlans13 = gsap.to(imgPlans13, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed15(speed) {
+  gsap.to(initialRotationPlans13, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans13.addEventListener('mouseenter', () => {
+  changeSpeed15(4);
+});
+
+hoverTriggerPlans13.addEventListener('mouseleave', () => {
+  changeSpeed15(1);
+});
+
+// Copy 14
+const spinningImgPlans14 = document.querySelector('#plans-spinning-img14');
+const imgPlans14 = spinningImgPlans14.querySelector('img');
+const hoverTriggerPlans14 = document.querySelector('#plans-hover-trigger14');
+
+const initialRotationPlans14 = gsap.to(imgPlans14, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed16(speed) {
+  gsap.to(initialRotationPlans14, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans14.addEventListener('mouseenter', () => {
+  changeSpeed16(4);
+});
+
+hoverTriggerPlans14.addEventListener('mouseleave', () => {
+  changeSpeed16(1);
+});
+
+// Copy 15
+const spinningImgPlans15 = document.querySelector('#plans-spinning-img15');
+const imgPlans15 = spinningImgPlans15.querySelector('img');
+const hoverTriggerPlans15 = document.querySelector('#plans-hover-trigger15');
+
+const initialRotationPlans15 = gsap.to(imgPlans15, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed17(speed) {
+  gsap.to(initialRotationPlans15, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans15.addEventListener('mouseenter', () => {
+  changeSpeed17(4);
+});
+
+hoverTriggerPlans15.addEventListener('mouseleave', () => {
+  changeSpeed17(1);
+});
+
+// Copy 16
+const spinningImgPlans16 = document.querySelector('#plans-spinning-img16');
+const imgPlans16 = spinningImgPlans16.querySelector('img');
+const hoverTriggerPlans16 = document.querySelector('#plans-hover-trigger16');
+
+const initialRotationPlans16 = gsap.to(imgPlans16, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed18(speed) {
+  gsap.to(initialRotationPlans16, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans16.addEventListener('mouseenter', () => {
+  changeSpeed18(4);
+});
+
+hoverTriggerPlans16.addEventListener('mouseleave', () => {
+  changeSpeed18(1);
+});
+
+// Copy 17
+const spinningImgPlans17 = document.querySelector('#plans-spinning-img17');
+const imgPlans17 = spinningImgPlans17.querySelector('img');
+const hoverTriggerPlans17 = document.querySelector('#plans-hover-trigger17');
+
+const initialRotationPlans17 = gsap.to(imgPlans17, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed19(speed) {
+  gsap.to(initialRotationPlans17, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans17.addEventListener('mouseenter', () => {
+  changeSpeed19(4);
+});
+
+hoverTriggerPlans17.addEventListener('mouseleave', () => {
+  changeSpeed19(1);
+});
+
+// Copy 18
+const spinningImgPlans18 = document.querySelector('#plans-spinning-img18');
+const imgPlans18 = spinningImgPlans18.querySelector('img');
+const hoverTriggerPlans18 = document.querySelector('#plans-hover-trigger18');
+
+const initialRotationPlans18 = gsap.to(imgPlans18, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed20(speed) {
+  gsap.to(initialRotationPlans18, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans18.addEventListener('mouseenter', () => {
+  changeSpeed20(4);
+});
+
+hoverTriggerPlans18.addEventListener('mouseleave', () => {
+  changeSpeed20(1);
+});
+
+// Copy 19
+const spinningImgPlans19 = document.querySelector('#plans-spinning-img19');
+const imgPlans19 = spinningImgPlans19.querySelector('img');
+const hoverTriggerPlans19 = document.querySelector('#plans-hover-trigger19');
+
+const initialRotationPlans19 = gsap.to(imgPlans19, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed21(speed) {
+  gsap.to(initialRotationPlans19, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans19.addEventListener('mouseenter', () => {
+  changeSpeed21(4);
+});
+
+hoverTriggerPlans19.addEventListener('mouseleave', () => {
+  changeSpeed21(1);
+});
+
+
+// Copy 20
+const spinningImgPlans20 = document.querySelector('#plans-spinning-special1');
+const imgPlans20 = spinningImgPlans20.querySelector('img');
+const hoverTriggerPlans20 = document.querySelector('.plans-container-inside1');
+
+const initialRotationPlans20 = gsap.to(imgPlans20, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed22(speed) {
+  gsap.to(initialRotationPlans20, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans20.addEventListener('mouseenter', () => {
+  changeSpeed22(4);
+});
+
+hoverTriggerPlans20.addEventListener('mouseleave', () => {
+  changeSpeed22(1);
+});
+
+// Copy 21
+const spinningImgPlans21 = document.querySelector('#plans-spinning-special2');
+const imgPlans21 = spinningImgPlans21.querySelector('img');
+const hoverTriggerPlans21 = document.querySelector('.plans-container-inside2');
+
+const initialRotationPlans21 = gsap.to(imgPlans21, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed23(speed) {
+  gsap.to(initialRotationPlans21, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans21.addEventListener('mouseenter', () => {
+  changeSpeed23(4);
+});
+
+hoverTriggerPlans21.addEventListener('mouseleave', () => {
+  changeSpeed23(1);
+});
+
+// Copy 22
+const spinningImgPlans22 = document.querySelector('#plans-spinning-special3');
+const imgPlans22 = spinningImgPlans22.querySelector('img');
+const hoverTriggerPlans22 = document.querySelector('.plans-container-inside3');
+
+const initialRotationPlans22 = gsap.to(imgPlans22, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed24(speed) {
+  gsap.to(initialRotationPlans22, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans22.addEventListener('mouseenter', () => {
+  changeSpeed24(4);
+});
+
+hoverTriggerPlans22.addEventListener('mouseleave', () => {
+  changeSpeed24(1);
+});
+
+// Copy 23
+const spinningImgPlans23 = document.querySelector('#plans-spinning-special4');
+const imgPlans23 = spinningImgPlans23.querySelector('img');
+const hoverTriggerPlans23 = document.querySelector('.plans-container-inside4');
+
+const initialRotationPlans23 = gsap.to(imgPlans23, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeed25(speed) {
+  gsap.to(initialRotationPlans23, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+hoverTriggerPlans23.addEventListener('mouseenter', () => {
+  changeSpeed25(4);
+});
+
+hoverTriggerPlans23.addEventListener('mouseleave', () => {
+  changeSpeed25(1);
+});
+
+
+
+
+
+
+
+
+
+
+
 
 const containerWidth = document.querySelector(".first-container").offsetWidth;
 
