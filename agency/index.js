@@ -758,7 +758,7 @@ function drag(event) {
     const dragDistance = clientX - initialDragX;
     let sensitivity = 1; // Default sensitivity for desktop
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      sensitivity = 6; // High sensitivity for mobile devices
+      sensitivity = 5; // High sensitivity for mobile devices
     }
     dragPercentage = dragDistance / (window.innerWidth * sensitivity); // Update drag percentage with sensitivity
     tween.progress(tween.progress() - dragPercentage); // Adjust animation progress based on drag distance
@@ -776,7 +776,7 @@ function endDrag() {
     // Resume animation with adjusted timeScale and smooth transition
     gsap.to(tween, {
       timeScale: currentDirection,
-      duration: 0.7, // Smooth transition duration
+      duration: 0, // Smooth transition duration
       onComplete: () => {
         // Adjust tween progress after transition
         tween.progress(tween.progress() - dragPercentage);
@@ -888,6 +888,92 @@ window.addEventListener('touchend', () => {
 
 
 
+const thirdVideo = document.getElementById('bgVideo-design');
+
+const pauseThirdVideo = () => {
+  thirdVideo.pause();
+};
+
+const playThirdVideo = () => {
+  thirdVideo.play();
+};
+
+let isThirdVideoPlaying = false;
+let mouseXThird = 0;
+let mouseYThird = 0;
+let prevMouseXThird = 0;
+let prevMouseYThird = 0;
+let mouseVelocityThird = 0;
+
+window.addEventListener('mousemove', (event) => {
+  mouseXThird = event.clientX;
+  mouseYThird = event.clientY;
+});
+
+window.addEventListener('mouseout', () => {
+  pauseThirdVideo();
+  isThirdVideoPlaying = false;
+});
+
+const calculateMouseVelocityThird = () => {
+  const deltaXThird = mouseXThird - prevMouseXThird;
+  const deltaYThird = mouseYThird - prevMouseYThird;
+  const distanceThird = Math.sqrt(deltaXThird * deltaXThird + deltaYThird * deltaYThird);
+  const elapsedTimeThird = 0.016;
+  mouseVelocityThird = distanceThird / elapsedTimeThird;
+  prevMouseXThird = mouseXThird;
+  prevMouseYThird = mouseYThird;
+};
+
+const updatePlaybackRateThird = () => {
+  const maxVelocityThird = 100;
+  const minPlaybackRateThird = 0.5;
+  const maxPlaybackRateThird = 1;
+  calculateMouseVelocityThird();
+  const newPlaybackRateThird = minPlaybackRateThird + (mouseVelocityThird / maxVelocityThird) * (maxPlaybackRateThird - minPlaybackRateThird) * 0.05;
+  gsap.to(thirdVideo, { playbackRate: newPlaybackRateThird, duration: 0.5 });
+};
+
+const handleMouseMovementThird = () => {
+  if (!isThirdVideoPlaying) {
+    playThirdVideo();
+    isThirdVideoPlaying = true;
+  }
+  clearTimeout(window.mouseMoveTimeoutThird);
+  window.mouseMoveTimeoutThird = setTimeout(() => {
+    pauseThirdVideo();
+    isThirdVideoPlaying = false;
+  }, 100);
+};
+
+window.addEventListener('mousemove', () => {
+  updatePlaybackRateThird();
+  handleMouseMovementThird();
+});
+
+const backgroundVideoThird = document.getElementById('bgVideo-design');
+
+const pauseBackgroundVideoThird = () => {
+  backgroundVideoThird.pause();
+};
+
+const playBackgroundVideoThird = () => {
+  backgroundVideoThird.play();
+};
+
+window.addEventListener('touchstart', () => {
+  playBackgroundVideoThird();
+});
+
+window.addEventListener('touchend', () => {
+  pauseBackgroundVideoThird();
+});
+
+
+
+
+
+
 //scrolling 3 things
 
 
@@ -913,7 +999,7 @@ function initializeAnimation() {
   animationProgression = gsap.to(".marquee-inner2", {
     x: -contentWidth / 2,
     repeat: -1,
-    duration: 15,
+    duration: 20,
     ease: "linear",
   }).totalProgress(0.5);
 }
@@ -932,9 +1018,9 @@ function continueInteraction(event) {
   if (isUserInteracting) {
     const clientX = event.clientX || event.touches[0].clientX;
     const interactionDistance = clientX - initialInteractionX;
-    let sensitivity = 1;
+    let sensitivity = 2;
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      sensitivity = 6;
+      sensitivity = 8;
     }
     interactionPercent = interactionDistance / (window.innerWidth * sensitivity);
     animationProgression.progress(animationProgression.progress() - interactionPercent);
@@ -948,7 +1034,7 @@ function endInteraction() {
     currentOrientation = interactionPercent > 0 ? -1 : 1;
     gsap.to(animationProgression, {
       timeScale: currentOrientation,
-      duration: 0.7,
+      duration: 0,
       onComplete: () => {
         animationProgression.progress(animationProgression.progress() - interactionPercent);
         interactionPercent = 0;
@@ -1006,7 +1092,7 @@ function initializeSequence() {
   animationSequence = gsap.to(".marquee-inner3", {
     x: -marqueeWidth / 2, // Initial position
     repeat: -1, // Repeat indefinitely
-    duration: 15, // Adjust duration as needed
+    duration: 20, // Adjust duration as needed
     ease: "linear",
   }).totalProgress(0.5);
 }
@@ -1031,9 +1117,9 @@ function dragEvent(event) {
   if (isDraggingNow) {
     const clientX = event.clientX || event.touches[0].clientX;
     const dragDistance = clientX - initialDragPos;
-    let sensitivity = 1; // Default sensitivity for desktop
+    let sensitivity = 2; // Default sensitivity for desktop
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      sensitivity = 6; // High sensitivity for mobile devices
+      sensitivity = 8; // High sensitivity for mobile devices
     }
     currentDragPercent = dragDistance / (window.innerWidth * sensitivity); // Updated variable name
     animationSequence.progress(animationSequence.progress() - currentDragPercent); // Adjust animation progress based on drag distance
@@ -1050,7 +1136,7 @@ function endDraggingEvent() {
     // Resume animation with adjusted timeScale and smooth transition
     gsap.to(animationSequence, {
       timeScale: currentMotionDirection,
-      duration: 0.7, // Smooth transition duration
+      duration: 0, // Smooth transition duration
       onComplete: () => {
         // Adjust tween progress after transition
         animationSequence.progress(animationSequence.progress() - currentDragPercent);
@@ -1103,7 +1189,7 @@ function initiateTweenCustom() {
   tweenAnimationCustom = gsap.to(".marquee-inner4", {
     x: -marqueeWidthCustom / 2,
     repeat: -1,
-    duration: 15,
+    duration: 20,
     ease: "linear",
   }).totalProgress(0.5);
 }
@@ -1124,9 +1210,9 @@ function dragCustom(event) {
   if (isDraggingCustom) {
     const clientXCustom = event.clientX || event.touches[0].clientX;
     const dragDistanceCustom = clientXCustom - initialDragXCustom;
-    let sensitivityCustom = 1;
+    let sensitivityCustom = 2;
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      sensitivityCustom = 6;
+      sensitivityCustom = 8;
     }
     dragPercentCustom = dragDistanceCustom / (window.innerWidth * sensitivityCustom);
     tweenAnimationCustom.progress(tweenAnimationCustom.progress() - dragPercentCustom);
@@ -1140,7 +1226,7 @@ function endDraggingCustom() {
     currentDirectionCustom = dragPercentCustom > 0 ? -1 : 1;
     gsap.to(tweenAnimationCustom, {
       timeScale: currentDirectionCustom,
-      duration: 1,
+      duration: 0,
       onComplete: () => {
         tweenAnimationCustom.progress(tweenAnimationCustom.progress() - dragPercentCustom);
         dragPercentCustom = 0;
