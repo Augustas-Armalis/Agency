@@ -92,8 +92,51 @@ a:active {
   width: 1.5rem;
   height: auto;
   overflow: hidden;
-  padding-top: 0.5rem;
   margin-right: 0.5rem;
+  align-items: center;
+  display: flex;
+}
+
+#plans-spinning-img1,
+#plans-spinning-img2,
+#plans-spinning-img3,
+#plans-spinning-img4,
+#plans-spinning-img5,
+#plans-spinning-img6,
+#plans-spinning-img7,
+#plans-spinning-img8,
+#plans-spinning-img9,
+#plans-spinning-img10,
+#plans-spinning-img11,
+#plans-spinning-img12,
+#plans-spinning-img13,
+#plans-spinning-img14,
+#plans-spinning-img15,
+#plans-spinning-img16,
+#plans-spinning-img17,
+#plans-spinning-img18,
+#plans-spinning-img19 {
+  width: 1.5rem;
+  height: auto;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  margin-right: 0.5rem;
+}
+
+#plans-spinning-special1,
+#plans-spinning-special2,
+#plans-spinning-special3,
+#plans-spinning-special4 {
+  width: 3.5rem;
+  height: auto;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  z-index: 80;
 }
 
 .circle-image {
@@ -622,6 +665,10 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 90;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 
@@ -760,6 +807,19 @@ body {
 
 }
 
+#bgVideo-plans {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 3;
+
+}
+
 .marquee {
   margin-top: 10vh;
   position: relative;
@@ -826,6 +886,18 @@ body {
 }
 
 .more-images:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 1);
+}
+
+.more-plans {
+  font-family: "SfItalic";
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  transition: text-shadow 0.2s ease-in-out;
+}
+
+.more-plans:hover {
   text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 1);
 }
 
@@ -989,7 +1061,7 @@ body {
 }
 
 #marquee-part {
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 #marquee-part:hover {
@@ -997,14 +1069,28 @@ body {
 }
 
 .marquee-part {
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 .marquee-part:hover {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3), 0 0 45px rgba(255, 255, 255, 0.3);
 }
 
+.plans-card-container-border {
+  transition: box-shadow 0.2s ease-in-out;
+}
 
+.plans-card-container-border:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2), 0 0 45px rgba(255, 255, 255, 0.2);
+}
+
+.plans-card-container-premium {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.plans-card-container-premium:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2), 0 0 45px rgba(255, 255, 255, 0.2);
+}
 
 #marquee-part {
   user-select: none;
@@ -1023,40 +1109,10 @@ body {
 }
 
 
-.twelft-container {
-  background-size: 10rem 10rem;
-  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
-  background-position: center;
-  z-index: 90;
-  background-color: black;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
 
 
-.Choose-card {
-  width: 300px;
-  margin: 10px;
-  height: auto;
-  border-radius: 13px;
-  box-shadow: 0 0 10px rgba(151, 59, 59, 0.2);
-  background-color: black;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: 1px solid rgb(255, 0, 0)
-}
 
-.Choose-card:nth-child(4) {
-  border: 1px solid rgb(0, 255, 0)
-}
+
 
 
 .Choose-content {
@@ -1064,6 +1120,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
+  z-index: 20;
 }
 
 .Choose-container {
@@ -1074,6 +1131,7 @@ body {
   margin-bottom: 15vh;
   text-align: center;
   margin-top: 30vh;
+  min-height: 70vh;
 }
 
 .Choose-title {
@@ -1098,20 +1156,25 @@ body {
 
 .choose-first-title {
   font-family: "NewYork";
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: -0.7rem;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 45px rgba(255, 255, 255, 0.5);
+  cursor: default;
 }
 
 .choose-first-title-content {
   font-size: 1.5rem;
   font-family: "SfItalic";
   margin-bottom: 0.5rem;
+  cursor: default;
 }
 
 .Choose-text-content-title {
   font-size: 2rem;
   font-family: "Sf";
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: default;
 }
 
 .Choose-text-content-content {
@@ -1120,10 +1183,121 @@ body {
   color: #7e7e7e;
 }
 
+.plans-content-table {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.plans-content-holder {
+  display: flex;
+  align-items: center;
+  transition: text-shadow 0.2s ease-in-out;
+  font-family: "SfItalic";
+  cursor: default;
+}
+
+.plans-content-holder:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.9), 0 0 45px rgba(255, 255, 255, 0.9);
+}
+
+.plans-card-container-border {
+  background: radial-gradient(circle at 100% 100%, #000000 0, #000000 10px, transparent 10px) 0% 0%/11px 11px no-repeat,
+    radial-gradient(circle at 0 100%, #000000 0, #000000 10px, transparent 10px) 100% 0%/11px 11px no-repeat,
+    radial-gradient(circle at 100% 0, #000000 0, #000000 10px, transparent 10px) 0% 100%/11px 11px no-repeat,
+    radial-gradient(circle at 0 0, #000000 0, #000000 10px, transparent 10px) 100% 100%/11px 11px no-repeat,
+    linear-gradient(#000000, #000000) 50% 50%/calc(100% - 2px) calc(100% - 22px) no-repeat,
+    linear-gradient(#000000, #000000) 50% 50%/calc(100% - 22px) calc(100% - 2px) no-repeat,
+    linear-gradient(145deg, transparent 0%, #ffffff 0%, rgba(0, 0, 0, 0.35) 100%);
+  border-radius: 11px;
+  padding: 9px;
+  box-sizing: border-box;
+  padding: 9px;
+  width: 350px;
+  margin: 20px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  position: relative;
+}
+
+.plans-card-container-premium {
+  background-color: #000000;
+  border-radius: 11px;
+  border: 1px solid #7e7e7e;
+  box-sizing: border-box;
+  padding: 9px;
+  width: 350px;
+  margin: 20px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  position: relative;
+
+}
+
+.plans-container-inside1,
+.plans-container-inside2 {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+
+.plans-container-inside3,
+.plans-container-inside4 {
+  overflow: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
 
 
 
 
+
+.buy-button {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.buy-button p {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.buy-button:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2), 0 0 45px rgba(255, 255, 255, 0.2);
+}
+
+.price {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 3rem;
+  cursor: default;
+
+}
 
 
 
@@ -1170,9 +1344,24 @@ body {
   overflow: hidden;
 }
 
+.thirteenth-container {
+  background-size: 10rem 10rem;
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 0.5) 1px, transparent 1px);
+  background-position: center;
+  z-index: 90;
+  background-color: black;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .Choose-card {
-  width: 330px;
+  width: 350px;
   margin: 20px;
   height: auto;
   border-radius: 13px;
@@ -1185,9 +1374,7 @@ body {
   border: 1px solid rgb(255, 0, 0)
 }
 
-.Choose-card:nth-child(5) {
-  border: 1px solid rgba(99, 99, 99, 1);
-}
+
 
 
 .Choose-content {
@@ -1229,7 +1416,7 @@ body {
 
 .choose-first-title {
   font-family: "NewYork";
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   margin-bottom: -0.7rem;
 }
 
@@ -1249,7 +1436,30 @@ body {
   font-size: 2rem;
 }
 
+.swich-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  vertical-align: middle;
+  height: auto;
+  margin-top: 3vh;
+  width: auto;
+  gap: 10px;
+  margin-bottom: 10vh;
+}
 
+.simple-text {
+  font-size: 2rem;
+  cursor: default;
+}
+
+.premium-text {
+  font-family: "NewYork";
+  font-size: 2rem;
+  margin-left: 15px;
+  cursor: default;
+}
 
 .toggle-switch {
   position: relative;
@@ -1273,8 +1483,9 @@ body {
   background-size: cover;
   transition: background-color 0.4s;
   border-radius: 34px;
-  border: 1px solid lightgray;
-  /* Adjusted border color */
+  border: 1px solid rgb(255, 255, 255);
+  width: 70px;
+
 }
 
 .switch::before {
@@ -1284,20 +1495,20 @@ body {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: transform 0.4s, background-color 0.4s;
-  border: 1px solid white;
-}
-
-.checkbox:checked+.switch {
-  background-color: lightgreen;
-  /* Adjusted background color when checked */
+  background-image: url('images/Empty\ Star.svg');
+  /* SVG with transparent background */
+  background-size: contain;
+  transition: all 1s;
+  /* Added transition for background-image */
 }
 
 .checkbox:checked+.switch::before {
-  transform: translateX(26px);
-  background-color: white;
+  transform: translateX(70px);
+  background-image: url('images/Filled\ Star.svg');
+}
+
+.checkbox:checked+.switch::before {
+  transform: translateX(37px) rotate(180deg);
 }
 
 .container {
@@ -1329,6 +1540,20 @@ body {
 
 
 @media screen and (max-width: 1024px) {
+
+
+  .Choose-container {
+    min-height: 170vh;
+    margin-top: 40vh;
+  }
+
+  .plans-card-container-border {
+    margin-bottom: 10px;
+  }
+
+  .plans-card-container-premium {
+    margin-bottom: 7vh;
+  }
 
   #SfL:hover {
     font-family: "Sf";
@@ -1411,12 +1636,36 @@ body {
 
   #spinning-img,
   #spinning-img1 {
-    width: 1rem;
+    width: 1.3rem;
     height: auto;
     overflow: hidden;
-    margin-bottom: 0.2rem;
     margin-right: 0.5rem;
   }
+
+  #plans-spinning-img1,
+  #plans-spinning-img2,
+  #plans-spinning-img3,
+  #plans-spinning-img4,
+  #plans-spinning-img5,
+  #plans-spinning-img6,
+  #plans-spinning-img7,
+  #plans-spinning-img8,
+  #plans-spinning-img9,
+  #plans-spinning-img10,
+  #plans-spinning-img11,
+  #plans-spinning-img12,
+  #plans-spinning-img13,
+  #plans-spinning-img14,
+  #plans-spinning-img15,
+  #plans-spinning-img16,
+  #plans-spinning-img17,
+  #plans-spinning-img18,
+  #plans-spinning-img19 {
+    width: 1.4rem;
+    height: auto;
+    overflow: hidden;
+  }
+
 
   .circle-image {
     right: 0;
@@ -1435,6 +1684,21 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+
+  .Choose-card {
+    width: 80%;
+    margin-bottom: 1vh;
+  }
+
+  .plans-card-container-border {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .plans-card-container-premium {
+    width: 80%;
+    margin-bottom: 7vh;
+  }
 
   #text-line-container {
     width: 90%;
@@ -1542,6 +1806,30 @@ body {
     overflow: hidden;
     margin-bottom: 0.2rem;
     margin-right: 0.5rem;
+  }
+
+  #plans-spinning-img1,
+  #plans-spinning-img2,
+  #plans-spinning-img3,
+  #plans-spinning-img4,
+  #plans-spinning-img5,
+  #plans-spinning-img6,
+  #plans-spinning-img7,
+  #plans-spinning-img8,
+  #plans-spinning-img9,
+  #plans-spinning-img10,
+  #plans-spinning-img11,
+  #plans-spinning-img12,
+  #plans-spinning-img13,
+  #plans-spinning-img14,
+  #plans-spinning-img15,
+  #plans-spinning-img16,
+  #plans-spinning-img17,
+  #plans-spinning-img18,
+  #plans-spinning-img19 {
+    width: 1.3rem;
+    height: auto;
+    overflow: hidden;
   }
 
   .circle-image {
@@ -1666,7 +1954,7 @@ section {
 
 
 #compare-card-1 {
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 #compare-card-1:hover {
@@ -1674,7 +1962,7 @@ section {
 }
 
 #compare-card-2 {
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 #compare-card-2:hover {
@@ -1682,7 +1970,7 @@ section {
 }
 
 #compare-card-3 {
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 #compare-card-3:hover {
@@ -1690,7 +1978,7 @@ section {
 }
 
 #compare-card-4 {
-  transition: box-shadow 0.2s ease-in-out;
+  border: 1px solid rgb(0, 255, 0);
 }
 
 #compare-card-4:hover {
