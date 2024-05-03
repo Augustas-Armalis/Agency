@@ -2023,3 +2023,29 @@ newToggle.addEventListener('change', function () {
     });
   }
 });
+
+
+
+
+// Function to animate the growing circle
+function animateGrowingCircle() {
+  gsap.fromTo('.growing-circle', {
+    scale: 0.7, // Adjusted initial scale
+    opacity: 1
+  }, {
+    duration: 1,
+    scale: 1.7, // Adjusted final scale
+    opacity: 0,
+    ease: "power1.inOut",
+    onComplete: animateGrowingCircle // Repeat the animation
+  });
+}
+
+// Initial animation trigger
+animateGrowingCircle();
+
+
+
+function redirectToLink(url) {
+  window.location.href = url;
+}
