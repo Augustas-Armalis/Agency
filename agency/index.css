@@ -18,6 +18,21 @@
   src: url("fonts/sf_pro_display/SFPRODISPLAYTHINITALIC.OTF") format("truetype");
 }
 
+img {
+  pointer-events: none;
+}
+
+* {
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
+}
+
 h1 {
   font-family: "Sf";
   font-weight: 500;
@@ -692,8 +707,8 @@ body {
 .third-container,
 .third-container1 {
   background-size: 10rem 10rem;
-  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 0.5) 1px, transparent 1px);
   background-position: center;
   z-index: 90;
 }
@@ -903,7 +918,7 @@ body {
 
 .fifth-container {
   background-size: 10rem 10rem;
-  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 0.5) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
   background-position: center;
   z-index: 90;
@@ -916,7 +931,7 @@ body {
 
 .tenth-container {
   background-size: 10rem 10rem;
-  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 0.5) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
   background-position: center;
   z-index: 90;
@@ -1330,8 +1345,8 @@ body {
 
 .twelft-container {
   background-size: 10rem 10rem;
-  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 0.5) 1px, transparent 1px);
   background-position: center;
   z-index: 90;
   background-color: black;
@@ -1435,6 +1450,235 @@ body {
   font-family: "SfItalic";
   font-size: 2rem;
 }
+
+
+
+
+
+
+.star-absolute-agency-spec {
+  margin-top: 20px;
+  margin-right: 20px;
+  position: absolute;
+  align-self: flex-end;
+  width: 70px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+    /* Rotate the image 360 degrees */
+  }
+}
+
+
+
+
+
+
+.Choose-card-agency-spec {
+  width: 400px;
+  margin: 20px;
+  height: auto;
+  border-radius: 13px;
+  box-shadow: 0 0 10px rgba(151, 59, 59, 0.2);
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #636363;
+  padding-bottom: 10px;
+}
+
+.Choose-content-agency-spec {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.join-spec-plans-text-title {
+  width: 100%;
+  display: flex;
+  align-items: start;
+}
+
+.Choose-container-agency-spec {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15vh;
+  text-align: center;
+  margin-top: 30vh;
+}
+
+.Choose-title-agency-spec {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  text-align: start;
+  padding-left: 20px;
+}
+
+.choose-first-title-agency-spec1 {
+  font-family: "Sf";
+  font-size: 4rem;
+  margin-bottom: 2px;
+  cursor: default;
+}
+
+.choose-first-title-agency-spec2 {
+  font-family: "NewYork";
+  font-size: 3.5rem;
+  margin-bottom: -0.7rem;
+  cursor: default;
+}
+
+
+.Choose-text-content-agency-spec-below {
+  font-size: 1.3rem;
+  border-top: 1px solid rgba(70, 70, 70, 1);
+  width: 90%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-left: 10px;
+}
+
+.plans-for-arrow-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-plans-spec {
+  width: 40%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.container {
+  position: relative;
+  height: 100px;
+}
+
+.arrow-spec-agency-plans {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(-45deg);
+  margin-left: -20px;
+}
+
+
+.Choose-text-content-title-agency-spec-below {
+  font-size: 1.8rem;
+  font-family: "Sf";
+}
+
+.Choose-text-content-content-agency-spec-below {
+  font-family: "SfItalic";
+  font-size: 1.5rem;
+}
+
+.Choose-text-content-agency-spec-below {
+  transition: all 0.5s ease
+}
+
+.Choose-text-content-agency-spec-below:hover {
+  background-color: rgb(20, 20, 20);
+  cursor: pointer;
+}
+
+.Choose-text-content-agency-spec-below .arrow-spec-agency-plans {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(-45deg);
+  transition: margin-left 0.5s ease;
+  /* Add transition property */
+}
+
+.Choose-text-content-agency-spec-below:hover .arrow-spec-agency-plans {
+  margin-left: 0px;
+  /* Add padding-left on hover */
+}
+
+
+
+
+
+
+
+.join-now-container {
+  width: 100%;
+}
+
+.join-now-container-another {
+  width: 90%;
+}
+
+.join-now-ann {
+  background-color: white;
+  color: black;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 20px;
+  gap: 20px;
+  border-radius: 9999px;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.join-text {
+  font-size: 1.1rem;
+  cursor: default;
+}
+
+.container-bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.steady-circle,
+.growing-circle {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.steady-circle {
+  background-color: red;
+}
+
+.growing-circle {
+  border: 1.7px solid red;
+  opacity: 0;
+  transform-origin: center;
+}
+
+
+
+
 
 .swich-container {
   display: flex;
@@ -1685,12 +1929,21 @@ body {
 
 @media screen and (max-width: 600px) {
 
+  .choose-first-title-agency-spec2 {
+    font-size: 3rem;
+  }
+
   .Choose-container {
     margin-top: 30vh;
   }
 
   .Choose-card {
     width: 80%;
+    margin-bottom: 1vh;
+  }
+
+  .Choose-card-agency-spec {
+    width: 90%;
     margin-bottom: 1vh;
   }
 
