@@ -104,6 +104,14 @@ gsap.from(".split", {
   }
 });
 
+
+
+
+
+
+
+
+
 gsap.set(".agency-a", { x: -130 });
 gsap.to(".agency-a", {
   x: 0,
@@ -178,6 +186,20 @@ gsap.to(".bars1", {
     });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 gsap.from(".land1", {
   yPercent: 100,
@@ -459,6 +481,61 @@ trigger.addEventListener('mouseleave', () => {
 });
 
 
+const spinnerCopy1 = document.querySelector('#spinning-img15');
+const imageCopy1 = spinnerCopy1.querySelector('img');
+const triggerCopy1 = document.querySelector('#hover-trigger15');
+
+const rotationAnimationCopy1 = gsap.to(imageCopy1, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeedCopy1(speed) {
+  gsap.to(rotationAnimationCopy1, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+triggerCopy1.addEventListener('mouseenter', () => {
+  changeSpeedCopy1(4);
+});
+
+triggerCopy1.addEventListener('mouseleave', () => {
+  changeSpeedCopy1(1);
+});
+
+
+
+const spinnerCopy2 = document.querySelector('#spinning-img16');
+const imageCopy2 = spinnerCopy2.querySelector('img');
+const triggerCopy2 = document.querySelector('#hover-trigger16');
+
+const rotationAnimationCopy2 = gsap.to(imageCopy2, {
+  rotation: 360,
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+function changeSpeedCopy2(speed) {
+  gsap.to(rotationAnimationCopy2, {
+    timeScale: speed,
+    duration: 0.25,
+    ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+  });
+}
+
+triggerCopy2.addEventListener('mouseenter', () => {
+  changeSpeedCopy2(4);
+});
+
+triggerCopy2.addEventListener('mouseleave', () => {
+  changeSpeedCopy2(1);
+});
 
 
 
@@ -1357,6 +1434,28 @@ gsap.from(".title50", {
   stagger: 0.2,
 });
 
+gsap.from(".title51", {
+  scrollTrigger: {
+    trigger: ".title51",
+    toggleActions: "restart none restart reverse"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
+gsap.from(".title52", {
+  scrollTrigger: {
+    trigger: ".title52",
+    toggleActions: "restart none restart reverse"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
 gsap.from(".fourth-text", {
   delay: 0.5,
   scrollTrigger: {
@@ -2084,6 +2183,26 @@ function animateGrowingCircleras() {
 // Initial animation trigger
 animateGrowingCircleras();
 
+
+// Function to animate the growing circle
+function animateGrowingCirclerasas() {
+  gsap.fromTo('.growing-circle4', {
+    scale: 0.7, // Adjusted initial scale
+    opacity: 1
+  }, {
+    duration: 1,
+    scale: 1.7, // Adjusted final scale
+    opacity: 0,
+    ease: "power1.inOut",
+    onComplete: animateGrowingCirclerasas // Repeat the animation
+  });
+}
+
+// Initial animation trigger
+animateGrowingCirclerasas();
+
+
+
 // Function to animate the growing circle
 function animateGrowingCircleraspop() {
   gsap.fromTo('.growing-circle3', {
@@ -2136,6 +2255,7 @@ document.getElementById("new-container2").addEventListener("mouseenter", () => {
 document.getElementById("new-container2").addEventListener("mouseleave", () => {
   gsap.to(timelineras, { duration: 0.5, timeScale: 1 }); // Return to normal speed
 });
+
 
 
 
@@ -2372,3 +2492,84 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
+
+
+
+document.getElementById("subscriptionForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const apiKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMTE4ZGJlYTk5OWMzNjkwYjY5MWYxODJiNmVhMjBmMDY5YjJlYTFhYThiNGViZjNmMDkxYmM3N2E0NmI3ZjEwYmRkNGU5MjgzNTE5MTY1OTMiLCJpYXQiOjE3MDg2ODg2MzcuNzUwMTQsIm5iZiI6MTcwODY4ODYzNy43NTAxNDQsImV4cCI6NDg2NDM2MjIzNy43NDUyOTUsInN1YiI6IjgzNzU4OCIsInNjb3BlcyI6W119.w-4-JmwM5gOZFBlQ3rbRPAt8YVb13MVH2xw0HvHfHVFNtJJEW5xhrTbQ14_JDsYWFNL-sOkHygbtfyOZVa1lO0EG25hwInANzN3d2q730CvfH3lRPZaoHl12HTRtTh1CprsKvuW5J_NMNxfY78R9TJv6MGkKZ6p2RD0oW-eyiu_feYUNUrC62P8P77kIRHLKn_JlqOVnpoB3cN4OSYL28cRZfls4geMj7d_2gOA8XOBIcGjZEqyGCMM145KOc30rAQsWymGD8vpifD8Jd-0UG6Y_J6NW0JcLr-o5ZrJfG8YqztS1Ls88A92ynSw2a-BgexwdXuNQw94_jCiq2MFQMHkptR0pW4G2kDk1b_fxqS5BarndnXOyj5_QtQ9X_f9oO5EF95Cb7sUgYN0n0GBszZL4-tDO1hIeYmjwz2Sba4aNMOtnwmatDW2Y4ynq_mOB2TsOe48Nbg91qyF4aCcx6T9riODAlMsV0E4kUUfPMM6LJyn-LLZ1WZ4x4mk24IsSZoFGg4fTkFkvE7yMem9q4IU4zdZ08n7ZYjTpf2vVvsT7a6uded-mb5dChiS6K2LriyjrsDbcQ74tQy1F7m8t0TdksZntVW_Vz0W_waUHH6SjBsDllmI5rL48wLC2O2lSd_pu22At3eLtSViMV80L3pLK61DPq39pRmuWL4oUBzM";
+
+  fetch('https://connect.mailerlite.com/api/groups?filter[name]=Newsletter', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to retrieve group information');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const groupId = data.data[0].id;
+
+      fetch('https://connect.mailerlite.com/api/subscribers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          email: email,
+          fields: {
+            name: name
+          },
+          groups: [groupId]
+        })
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Subscription failed');
+          }
+          console.log('Subscription successful'); // Log success message to console
+          // Alternatively, you can display a pop-up message here
+          alert('Thank you! Your subscription was successful.');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Subscription failed');
+        });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Failed to retrieve group information');
+    });
+});
+
+
+
+// Define the animation timeline
+const timelinerasas = gsap.to(".star-absolute-free3", {
+  rotation: 360,
+  duration: 10,
+  ease: "none",
+  repeat: -1, // Infinite repeat
+});
+
+// Add event listeners for hover
+document.getElementById("subsribe-hover-on").addEventListener("mouseenter", () => {
+  gsap.to(timelinerasas, { duration: 0.5, timeScale: 5 }); // Speed up slightly
+});
+
+document.getElementById("subsribe-hover-on").addEventListener("mouseleave", () => {
+  gsap.to(timelinerasas, { duration: 0.5, timeScale: 1 }); // Return to normal speed
+});
