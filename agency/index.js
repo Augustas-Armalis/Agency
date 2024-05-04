@@ -1,108 +1,108 @@
-document.addEventListener("DOMContentLoaded", function () {
-  document.body.style.overflow = "hidden";
-  setTimeout(function () {
-    document.body.style.overflow = "auto";
-  }, 4000);
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.body.style.overflow = "hidden";
+//   setTimeout(function () {
+//     document.body.style.overflow = "auto";
+//   }, 4000);
+// });
 
-window.onload = function () {
-  const bars = document.querySelector(".bars");
-  const menu = document.querySelector(".menu");
-  const navItems = document.querySelectorAll(".navigation-item");
-  let menuOpen = false;
-  let lenisInstance;
+// window.onload = function () {
+//   const bars = document.querySelector(".bars");
+//   const menu = document.querySelector(".menu");
+//   const navItems = document.querySelectorAll(".navigation-item");
+//   let menuOpen = false;
+//   let lenisInstance;
 
-  function initializeLenis() {
-    lenisInstance = new Lenis();
-    lenisInstance.on('scroll', (e) => {
-      console.log(e);
-    });
-    function raf(time) {
-      lenisInstance.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }
+//   function initializeLenis() {
+//     lenisInstance = new Lenis();
+//     lenisInstance.on('scroll', (e) => {
+//       console.log(e);
+//     });
+//     function raf(time) {
+//       lenisInstance.raf(time);
+//       requestAnimationFrame(raf);
+//     }
+//     requestAnimationFrame(raf);
+//   }
 
-  setTimeout(initializeLenis, 5000);
+//   setTimeout(initializeLenis, 5000);
 
-  bars.addEventListener("click", function (e) {
-    this.classList.toggle("active");
-    menuOpen = !menuOpen;
-    if (menuOpen) {
-      gsap.to(".menu", {
-        duration: 1,
-        display: "flex",
-        ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
-      });
-      gsap.fromTo(".nav", {
-        marginTop: "-100vh"
-      }, {
-        duration: 1,
-        marginTop: "0",
-        ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
-        onComplete: function () {
-          gsap.to(".navigation-item", {
-            duration: 0,
-            opacity: 1
-          });
-          gsap.to(".navigation-item", {
-            duration: 0.6,
-            y: 0,
-            ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
-            stagger: 0.1
-          });
-        }
-      });
-      document.body.style.overflow = 'hidden';
-      if (lenisInstance) {
-        lenisInstance.destroy();
-        lenisInstance = null;
-      }
-    } else {
-      gsap.to(".navigation-item", {
-        duration: 0.5,
-        y: "-100%",
-        ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
-        stagger: 0.1,
-        onComplete: function () {
-          gsap.to(".navigation", {
-            duration: 0,
-            opacity: 0
-          });
-          gsap.to(".nav", {
-            duration: 1,
-            marginTop: "-100vh",
-            ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
-          });
-          gsap.to(".menu", {
-            duration: 1,
-            display: "none",
-            ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
-          });
-        }
-      });
-      document.body.style.overflow = 'auto';
-      initializeLenis();
-    }
-  });
-};
+//   bars.addEventListener("click", function (e) {
+//     this.classList.toggle("active");
+//     menuOpen = !menuOpen;
+//     if (menuOpen) {
+//       gsap.to(".menu", {
+//         duration: 1,
+//         display: "flex",
+//         ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+//       });
+//       gsap.fromTo(".nav", {
+//         marginTop: "-100vh"
+//       }, {
+//         duration: 1,
+//         marginTop: "0",
+//         ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+//         onComplete: function () {
+//           gsap.to(".navigation-item", {
+//             duration: 0,
+//             opacity: 1
+//           });
+//           gsap.to(".navigation-item", {
+//             duration: 0.6,
+//             y: 0,
+//             ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+//             stagger: 0.1
+//           });
+//         }
+//       });
+//       document.body.style.overflow = 'hidden';
+//       if (lenisInstance) {
+//         lenisInstance.destroy();
+//         lenisInstance = null;
+//       }
+//     } else {
+//       gsap.to(".navigation-item", {
+//         duration: 0.5,
+//         y: "-100%",
+//         ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+//         stagger: 0.1,
+//         onComplete: function () {
+//           gsap.to(".navigation", {
+//             duration: 0,
+//             opacity: 0
+//           });
+//           gsap.to(".nav", {
+//             duration: 1,
+//             marginTop: "-100vh",
+//             ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+//           });
+//           gsap.to(".menu", {
+//             duration: 1,
+//             display: "none",
+//             ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
+//           });
+//         }
+//       });
+//       document.body.style.overflow = 'auto';
+//       initializeLenis();
+//     }
+//   });
+// };
 
-gsap.from(".split", {
-  yPercent: 100,
-  duration: 0.5,
-  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
-  stagger: 0.05,
-  delay: 1,
-  onComplete: function () {
-    gsap.to(".split", {
-      yPercent: 1000,
-      duration: 1,
-      delay: 1,
-      ease: "power1.inOut"
-    });
-  }
-});
+// gsap.from(".split", {
+//   yPercent: 100,
+//   duration: 0.5,
+//   ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+//   stagger: 0.05,
+//   delay: 1,
+//   onComplete: function () {
+//     gsap.to(".split", {
+//       yPercent: 1000,
+//       duration: 1,
+//       delay: 1,
+//       ease: "power1.inOut"
+//     });
+//   }
+// });
 
 gsap.set(".agency-a", { x: -130 });
 gsap.to(".agency-a", {
@@ -1346,6 +1346,17 @@ gsap.from(".title47", {
   stagger: 0.2,
 });
 
+gsap.from(".title50", {
+  scrollTrigger: {
+    trigger: ".title50",
+    toggleActions: "restart none restart reverse"
+  },
+  yPercent: 100,
+  duration: 0.4,
+  ease: "cubic-bezier(0.770, 0.000, 0.175, 1.000)",
+  stagger: 0.2,
+});
+
 gsap.from(".fourth-text", {
   delay: 0.5,
   scrollTrigger: {
@@ -2024,6 +2035,11 @@ newToggle.addEventListener('change', function () {
   }
 });
 
+// Trigger the change event programmatically to start with the switch on
+newToggle.checked = true;
+newToggle.dispatchEvent(new Event('change'));
+
+
 
 
 
@@ -2049,3 +2065,310 @@ animateGrowingCircle();
 function redirectToLink(url) {
   window.location.href = url;
 }
+
+
+// Function to animate the growing circle
+function animateGrowingCircleras() {
+  gsap.fromTo('.growing-circle2', {
+    scale: 0.7, // Adjusted initial scale
+    opacity: 1
+  }, {
+    duration: 1,
+    scale: 1.7, // Adjusted final scale
+    opacity: 0,
+    ease: "power1.inOut",
+    onComplete: animateGrowingCircleras // Repeat the animation
+  });
+}
+
+// Initial animation trigger
+animateGrowingCircleras();
+
+// Function to animate the growing circle
+function animateGrowingCircleraspop() {
+  gsap.fromTo('.growing-circle3', {
+    scale: 0.7, // Adjusted initial scale
+    opacity: 1
+  }, {
+    duration: 1,
+    scale: 1.7, // Adjusted final scale
+    opacity: 0,
+    ease: "power1.inOut",
+    onComplete: animateGrowingCircleraspop // Repeat the animation
+  });
+}
+
+// Initial animation trigger
+animateGrowingCircleraspop();
+
+
+// Define the animation timeline
+const timeline = gsap.to(".star-absolute-free1", {
+  rotation: 360,
+  duration: 10,
+  ease: "none",
+  repeat: -1, // Infinite repeat
+});
+
+// Add event listeners for hover
+document.getElementById("new-container1").addEventListener("mouseenter", () => {
+  gsap.to(timeline, { duration: 0.5, timeScale: 5 }); // Speed up slightly
+});
+
+document.getElementById("new-container1").addEventListener("mouseleave", () => {
+  gsap.to(timeline, { duration: 0.5, timeScale: 1 }); // Return to normal speed
+});
+
+
+// Define the animation timeline
+const timelineras = gsap.to(".star-absolute-free2", {
+  rotation: 360,
+  duration: 10,
+  ease: "none",
+  repeat: -1, // Infinite repeat
+});
+
+// Add event listeners for hover
+document.getElementById("new-container2").addEventListener("mouseenter", () => {
+  gsap.to(timelineras, { duration: 0.5, timeScale: 5 }); // Speed up slightly
+});
+
+document.getElementById("new-container2").addEventListener("mouseleave", () => {
+  gsap.to(timelineras, { duration: 0.5, timeScale: 1 }); // Return to normal speed
+});
+
+
+
+
+
+
+
+
+
+// Toggle Collapse
+document.querySelectorAll('.faq li .question').forEach(question => {
+  const toggle = question.querySelector('.plus-minus-toggle');
+  const answer = question.nextElementSibling;
+
+  // Set initial state to collapsed
+  answer.style.maxHeight = 0;
+  answer.style.paddingBottom = 0;
+  toggle.classList.add('collapsed');
+
+  question.addEventListener('click', function () {
+    const isCollapsed = toggle.classList.contains('collapsed');
+
+    // Toggle collapse
+    if (isCollapsed) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      answer.style.paddingBottom = '25px';
+    } else {
+      answer.style.maxHeight = 0;
+      answer.style.paddingBottom = 0;
+    }
+
+    // Toggle classes
+    toggle.classList.toggle('collapsed');
+    this.parentNode.classList.toggle('active');
+  });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loadMoreBtnContainer = document.querySelector(".Choose-text-content-faq-load-more");
+  const showLessBtnContainer = document.querySelector(".Choose-text-content-faq-close-all");
+  const loadMoreBtn = document.getElementById("load-more-btn");
+  const showLessBtn = document.getElementById("show-less-btn");
+  const faqList = document.querySelector(".faq");
+  const faqItems = faqList.querySelectorAll("li");
+  const maxItemsToShow = 5;
+  let visibleItemCount = maxItemsToShow;
+
+  // Initially hide all FAQ items beyond the maximum limit
+  faqItems.forEach((item, index) => {
+    if (index >= maxItemsToShow) {
+      item.style.display = "none";
+    }
+  });
+
+  // Function to check if all FAQ items are visible
+  function allItemsVisible() {
+    return visibleItemCount >= faqItems.length;
+  }
+
+  // Function to toggle visibility of Load More and Show Less buttons
+  function toggleButtons() {
+    loadMoreBtnContainer.style.display = allItemsVisible() ? "none" : "block";
+    showLessBtnContainer.style.display = allItemsVisible() ? "block" : "none";
+  }
+
+  // Event listener for the Load More button
+  loadMoreBtn.addEventListener("click", function () {
+    let itemsToShow = maxItemsToShow;
+    if (visibleItemCount + maxItemsToShow > faqItems.length) {
+      itemsToShow = faqItems.length - visibleItemCount;
+    }
+    for (let i = visibleItemCount; i < visibleItemCount + itemsToShow; i++) {
+      if (faqItems[i]) {
+        faqItems[i].style.display = "block";
+      }
+    }
+    visibleItemCount += itemsToShow;
+
+    // Hide the Load More button if all items are visible
+    toggleButtons();
+  });
+
+  // Event listener for the Show Less button
+  showLessBtn.addEventListener("click", function () {
+    faqItems.forEach((item, index) => {
+      if (index >= maxItemsToShow) {
+        item.style.display = "none";
+      }
+    });
+    visibleItemCount = maxItemsToShow;
+
+    // Hide the Show Less button
+    toggleButtons();
+  });
+
+  // Initial button display
+  toggleButtons();
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector('.show-more-button');
+  const hiddenText = document.querySelector('.hidden-text');
+
+  button.addEventListener('click', function () {
+    hiddenText.classList.toggle('show');
+    if (hiddenText.classList.contains('show')) {
+      hiddenText.style.display = 'block';
+      button.textContent = 'Show Less';
+    } else {
+      hiddenText.style.display = 'none';
+      button.textContent = 'Show More';
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector('.show-more-button2');
+  const hiddenText = document.querySelector('.hidden-text2');
+
+  button.addEventListener('click', function () {
+    hiddenText.classList.toggle('show');
+    if (hiddenText.classList.contains('show')) {
+      hiddenText.style.display = 'block';
+      button.textContent = 'Show Less';
+    } else {
+      hiddenText.style.display = 'none';
+      button.textContent = 'Read More';
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector('.show-more-button3');
+  const hiddenText = document.querySelector('.hidden-text3');
+
+  button.addEventListener('click', function () {
+    hiddenText.classList.toggle('show');
+    if (hiddenText.classList.contains('show')) {
+      hiddenText.style.display = 'block';
+      button.textContent = 'Show Less';
+    } else {
+      hiddenText.style.display = 'none';
+      button.textContent = 'Read More';
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector('.show-more-button4');
+  const hiddenText = document.querySelector('.hidden-text4');
+
+  button.addEventListener('click', function () {
+    hiddenText.classList.toggle('show');
+    if (hiddenText.classList.contains('show')) {
+      hiddenText.style.display = 'block';
+      button.textContent = 'Show Less';
+    } else {
+      hiddenText.style.display = 'none';
+      button.textContent = 'Read More';
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector('.show-more-button5');
+  const hiddenText = document.querySelector('.hidden-text5');
+
+  button.addEventListener('click', function () {
+    hiddenText.classList.toggle('show');
+    if (hiddenText.classList.contains('show')) {
+      hiddenText.style.display = 'block';
+      button.textContent = 'Show Less';
+    } else {
+      hiddenText.style.display = 'none';
+      button.textContent = 'Read More';
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector('.show-more-button6');
+  const hiddenText = document.querySelector('.hidden-text6');
+
+  button.addEventListener('click', function () {
+    hiddenText.classList.toggle('show');
+    if (hiddenText.classList.contains('show')) {
+      hiddenText.style.display = 'block';
+      button.textContent = 'Show Less';
+    } else {
+      hiddenText.style.display = 'none';
+      button.textContent = 'Read More';
+    }
+  });
+});
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const showMoreButton = document.getElementById("show-more-buttonas");
+  const buttonTextElement = showMoreButton.querySelector("p"); // Get the <p> element inside the button
+  const hiddenTestimonials = document.querySelectorAll(".Choose-card-testimonial.hidden");
+  let isOpen = false; // Track if testimonials are currently open or closed
+
+  // Function to toggle visibility of hidden testimonials
+  function toggleTestimonials() {
+    hiddenTestimonials.forEach(function (testimonial) {
+      testimonial.classList.toggle("hidden");
+    });
+    isOpen = !isOpen; // Toggle isOpen state
+    // Change button text based on isOpen state
+    buttonTextElement.textContent = isOpen ? "Close All" : "More";
+  }
+
+  // Hide all but the first 3 testimonials initially
+  hiddenTestimonials.forEach(function (testimonial, index) {
+    if (index >= 3) {
+      testimonial.classList.add("hidden");
+    }
+  });
+
+  // Toggle visibility of hidden testimonials when "Show More" button is clicked
+  showMoreButton.addEventListener("click", function () {
+    toggleTestimonials();
+  });
+});
+
