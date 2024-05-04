@@ -104,14 +104,6 @@ gsap.from(".split", {
   }
 });
 
-
-
-
-
-
-
-
-
 gsap.set(".agency-a", { x: -130 });
 gsap.to(".agency-a", {
   x: 0,
@@ -186,20 +178,6 @@ gsap.to(".bars1", {
     });
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 gsap.from(".land1", {
   yPercent: 100,
@@ -419,10 +397,6 @@ window.addEventListener('touchend', () => {
   pauseBackgroundVideo();
 });
 
-
-
-
-
 const spinningImg = document.querySelector('#spinning-img');
 const img = spinningImg.querySelector('img');
 const hoverTrigger = document.querySelector('#hover-trigger');
@@ -449,9 +423,6 @@ hoverTrigger.addEventListener('mouseenter', () => {
 hoverTrigger.addEventListener('mouseleave', () => {
   changeSpeed1(1);
 });
-
-
-
 
 const spinner = document.querySelector('#spinning-img1');
 const image = spinner.querySelector('img');
@@ -480,7 +451,6 @@ trigger.addEventListener('mouseleave', () => {
   changeSpeed2(1);
 });
 
-
 const spinnerCopy1 = document.querySelector('#spinning-img15');
 const imageCopy1 = spinnerCopy1.querySelector('img');
 const triggerCopy1 = document.querySelector('#hover-trigger15');
@@ -507,8 +477,6 @@ triggerCopy1.addEventListener('mouseenter', () => {
 triggerCopy1.addEventListener('mouseleave', () => {
   changeSpeedCopy1(1);
 });
-
-
 
 const spinnerCopy2 = document.querySelector('#spinning-img16');
 const imageCopy2 = spinnerCopy2.querySelector('img');
@@ -537,9 +505,6 @@ triggerCopy2.addEventListener('mouseleave', () => {
   changeSpeedCopy2(1);
 });
 
-
-
-// Copy 1
 const spinningImgPlans1 = document.querySelector('#plans-spinning-img1');
 const imgPlans1 = spinningImgPlans1.querySelector('img');
 const hoverTriggerPlans1 = document.querySelector('#plans-hover-trigger1');
@@ -567,7 +532,6 @@ hoverTriggerPlans1.addEventListener('mouseleave', () => {
   changeSpeed3(1);
 });
 
-// Copy 2
 const spinningImgPlans2 = document.querySelector('#plans-spinning-img2');
 const imgPlans2 = spinningImgPlans2.querySelector('img');
 const hoverTriggerPlans2 = document.querySelector('#plans-hover-trigger2');
@@ -595,7 +559,6 @@ hoverTriggerPlans2.addEventListener('mouseleave', () => {
   changeSpeed4(1);
 });
 
-// Copy 3
 const spinningImgPlans3 = document.querySelector('#plans-spinning-img3');
 const imgPlans3 = spinningImgPlans3.querySelector('img');
 const hoverTriggerPlans3 = document.querySelector('#plans-hover-trigger3');
@@ -623,7 +586,6 @@ hoverTriggerPlans3.addEventListener('mouseleave', () => {
   changeSpeed5(1);
 });
 
-// Copy 4
 const spinningImgPlans4 = document.querySelector('#plans-spinning-img4');
 const imgPlans4 = spinningImgPlans4.querySelector('img');
 const hoverTriggerPlans4 = document.querySelector('#plans-hover-trigger4');
@@ -651,7 +613,6 @@ hoverTriggerPlans4.addEventListener('mouseleave', () => {
   changeSpeed6(1);
 });
 
-// Copy 5
 const spinningImgPlans5 = document.querySelector('#plans-spinning-img5');
 const imgPlans5 = spinningImgPlans5.querySelector('img');
 const hoverTriggerPlans5 = document.querySelector('#plans-hover-trigger5');
@@ -679,7 +640,6 @@ hoverTriggerPlans5.addEventListener('mouseleave', () => {
   changeSpeed7(1);
 });
 
-// Copy 6
 const spinningImgPlans6 = document.querySelector('#plans-spinning-img6');
 const imgPlans6 = spinningImgPlans6.querySelector('img');
 const hoverTriggerPlans6 = document.querySelector('#plans-hover-trigger6');
@@ -707,7 +667,6 @@ hoverTriggerPlans6.addEventListener('mouseleave', () => {
   changeSpeed8(1);
 });
 
-// Copy 7
 const spinningImgPlans7 = document.querySelector('#plans-spinning-img7');
 const imgPlans7 = spinningImgPlans7.querySelector('img');
 const hoverTriggerPlans7 = document.querySelector('#plans-hover-trigger7');
@@ -735,7 +694,6 @@ hoverTriggerPlans7.addEventListener('mouseleave', () => {
   changeSpeed9(1);
 });
 
-// Copy 8
 const spinningImgPlans8 = document.querySelector('#plans-spinning-img8');
 const imgPlans8 = spinningImgPlans8.querySelector('img');
 const hoverTriggerPlans8 = document.querySelector('#plans-hover-trigger8');
@@ -763,7 +721,6 @@ hoverTriggerPlans8.addEventListener('mouseleave', () => {
   changeSpeed10(1);
 });
 
-// Copy 9
 const spinningImgPlans9 = document.querySelector('#plans-spinning-img9');
 const imgPlans9 = spinningImgPlans9.querySelector('img');
 const hoverTriggerPlans9 = document.querySelector('#plans-hover-trigger9');
@@ -791,7 +748,6 @@ hoverTriggerPlans9.addEventListener('mouseleave', () => {
   changeSpeed11(1);
 });
 
-// Copy 10
 const spinningImgPlans10 = document.querySelector('#plans-spinning-img10');
 const imgPlans10 = spinningImgPlans10.querySelector('img');
 const hoverTriggerPlans10 = document.querySelector('#plans-hover-trigger10');
@@ -819,7 +775,6 @@ hoverTriggerPlans10.addEventListener('mouseleave', () => {
   changeSpeed12(1);
 });
 
-// Copy 11
 const spinningImgPlans11 = document.querySelector('#plans-spinning-img11');
 const imgPlans11 = spinningImgPlans11.querySelector('img');
 const hoverTriggerPlans11 = document.querySelector('#plans-hover-trigger11');
@@ -847,7 +802,6 @@ hoverTriggerPlans11.addEventListener('mouseleave', () => {
   changeSpeed13(1);
 });
 
-// Copy 12
 const spinningImgPlans12 = document.querySelector('#plans-spinning-img12');
 const imgPlans12 = spinningImgPlans12.querySelector('img');
 const hoverTriggerPlans12 = document.querySelector('#plans-hover-trigger12');
@@ -875,7 +829,6 @@ hoverTriggerPlans12.addEventListener('mouseleave', () => {
   changeSpeed14(1);
 });
 
-// Copy 13
 const spinningImgPlans13 = document.querySelector('#plans-spinning-img13');
 const imgPlans13 = spinningImgPlans13.querySelector('img');
 const hoverTriggerPlans13 = document.querySelector('#plans-hover-trigger13');
@@ -903,7 +856,6 @@ hoverTriggerPlans13.addEventListener('mouseleave', () => {
   changeSpeed15(1);
 });
 
-// Copy 14
 const spinningImgPlans14 = document.querySelector('#plans-spinning-img14');
 const imgPlans14 = spinningImgPlans14.querySelector('img');
 const hoverTriggerPlans14 = document.querySelector('#plans-hover-trigger14');
@@ -931,7 +883,6 @@ hoverTriggerPlans14.addEventListener('mouseleave', () => {
   changeSpeed16(1);
 });
 
-// Copy 15
 const spinningImgPlans15 = document.querySelector('#plans-spinning-img15');
 const imgPlans15 = spinningImgPlans15.querySelector('img');
 const hoverTriggerPlans15 = document.querySelector('#plans-hover-trigger15');
@@ -959,7 +910,6 @@ hoverTriggerPlans15.addEventListener('mouseleave', () => {
   changeSpeed17(1);
 });
 
-// Copy 16
 const spinningImgPlans16 = document.querySelector('#plans-spinning-img16');
 const imgPlans16 = spinningImgPlans16.querySelector('img');
 const hoverTriggerPlans16 = document.querySelector('#plans-hover-trigger16');
@@ -987,7 +937,6 @@ hoverTriggerPlans16.addEventListener('mouseleave', () => {
   changeSpeed18(1);
 });
 
-// Copy 17
 const spinningImgPlans17 = document.querySelector('#plans-spinning-img17');
 const imgPlans17 = spinningImgPlans17.querySelector('img');
 const hoverTriggerPlans17 = document.querySelector('#plans-hover-trigger17');
@@ -1015,7 +964,6 @@ hoverTriggerPlans17.addEventListener('mouseleave', () => {
   changeSpeed19(1);
 });
 
-// Copy 18
 const spinningImgPlans18 = document.querySelector('#plans-spinning-img18');
 const imgPlans18 = spinningImgPlans18.querySelector('img');
 const hoverTriggerPlans18 = document.querySelector('#plans-hover-trigger18');
@@ -1043,7 +991,6 @@ hoverTriggerPlans18.addEventListener('mouseleave', () => {
   changeSpeed20(1);
 });
 
-// Copy 19
 const spinningImgPlans19 = document.querySelector('#plans-spinning-img19');
 const imgPlans19 = spinningImgPlans19.querySelector('img');
 const hoverTriggerPlans19 = document.querySelector('#plans-hover-trigger19');
@@ -1071,8 +1018,6 @@ hoverTriggerPlans19.addEventListener('mouseleave', () => {
   changeSpeed21(1);
 });
 
-
-// Copy 20
 const spinningImgPlans20 = document.querySelector('#plans-spinning-special1');
 const imgPlans20 = spinningImgPlans20.querySelector('img');
 const hoverTriggerPlans20 = document.querySelector('.plans-container-inside1');
@@ -1100,7 +1045,6 @@ hoverTriggerPlans20.addEventListener('mouseleave', () => {
   changeSpeed22(1);
 });
 
-// Copy 21
 const spinningImgPlans21 = document.querySelector('#plans-spinning-special2');
 const imgPlans21 = spinningImgPlans21.querySelector('img');
 const hoverTriggerPlans21 = document.querySelector('.plans-container-inside2');
@@ -1128,7 +1072,6 @@ hoverTriggerPlans21.addEventListener('mouseleave', () => {
   changeSpeed23(1);
 });
 
-// Copy 22
 const spinningImgPlans22 = document.querySelector('#plans-spinning-special3');
 const imgPlans22 = spinningImgPlans22.querySelector('img');
 const hoverTriggerPlans22 = document.querySelector('.plans-container-inside3');
@@ -1156,7 +1099,6 @@ hoverTriggerPlans22.addEventListener('mouseleave', () => {
   changeSpeed24(1);
 });
 
-// Copy 23
 const spinningImgPlans23 = document.querySelector('#plans-spinning-special4');
 const imgPlans23 = spinningImgPlans23.querySelector('img');
 const hoverTriggerPlans23 = document.querySelector('.plans-container-inside4');
@@ -1184,19 +1126,7 @@ hoverTriggerPlans23.addEventListener('mouseleave', () => {
   changeSpeed25(1);
 });
 
-
-
-
-
-
-
-
-
-
-
-
 const containerWidth = document.querySelector(".first-container").offsetWidth;
-
 const textWidth = document.querySelector(".moving-sideways").offsetWidth;
 
 let multiplier;
@@ -1206,7 +1136,7 @@ if (window.innerWidth <= 768) {
   multiplier = 1.5;
 }
 
-let sliderWidth
+let sliderWidth;
 if (window.innerWidth <= 768) {
   sliderWidth = 500;
 } else {
@@ -1276,8 +1206,6 @@ gsap.from(".title", {
   stagger: 0.2,
 });
 
-
-
 gsap.from(".below-sideways-moving-text", {
   delay: 0.5,
   scrollTrigger: {
@@ -1290,15 +1218,12 @@ gsap.from(".below-sideways-moving-text", {
   stagger: 0.5,
 });
 
-
-let cardSmth
+let cardSmth;
 if (window.innerWidth <= 768) {
   cardSmth = 6;
 } else {
   cardSmth = 1;
 }
-
-
 
 gsap.set(".flying-card", { yPercent: 130 });
 
@@ -1316,7 +1241,6 @@ gsap.to(".flying-card", {
   stagger: 1,
 });
 
-
 gsap.set(".flying-card1", { yPercent: 130 });
 
 gsap.to(".flying-card1", {
@@ -1332,8 +1256,6 @@ gsap.to(".flying-card1", {
   duration: 1,
   stagger: 1,
 });
-
-
 
 gsap.from(".title4", {
   scrollTrigger: {
@@ -1480,92 +1402,75 @@ gsap.from(".fourth-text1", {
   stagger: 0.5,
 });
 
-
 let currentScroll = 0;
 let isScrollingDown = true;
 let tween;
 let isDragging = false;
 let initialDragX = 0;
-let dragPercentage = 100; // Added to track drag percentage
-let currentDirection = 1; // Default direction
+let dragPercentage = 100;
+let currentDirection = 1;
 
-// Calculate total width of marquee content
 const marqueeWidth = document.querySelector('.marquee-inner').offsetWidth;
 
-let scrollImageEx
+let scrollImageEx;
 if (window.innerWidth <= 768) {
   scrollImageEx = 9;
 } else {
   scrollImageEx = 15;
 }
 
-
-// Function to create GSAP animation
 function createAnimation() {
   tween = gsap.to(".marquee-inner", {
-    x: -marqueeWidth / 2, // Initial position
-    repeat: -1, // Repeat indefinitely
-    duration: scrollImageEx, // Adjust duration as needed
+    x: -marqueeWidth / 2,
+    repeat: -1,
+    duration: scrollImageEx,
     ease: "linear",
   }).totalProgress(0.5);
 }
 
-// Initialize animation
 createAnimation();
 
-
-
-// Start dragging
 function startDrag(event) {
   if (event.target.classList.contains('marquee-part')) {
     isDragging = true;
     initialDragX = event.clientX || event.touches[0].clientX;
-    gsap.set(tween, { timeScale: 0 }); // Pause animation when dragging starts
+    gsap.set(tween, { timeScale: 0 });
   }
 }
 
-// Continue dragging
 function drag(event) {
   if (isDragging) {
     const clientX = event.clientX || event.touches[0].clientX;
     const dragDistance = clientX - initialDragX;
-    let sensitivity = 1; // Default sensitivity for desktop
+    let sensitivity = 1;
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      sensitivity = 5; // High sensitivity for mobile devices
+      sensitivity = 5;
     }
-    dragPercentage = dragDistance / (window.innerWidth * sensitivity); // Update drag percentage with sensitivity
-    tween.progress(tween.progress() - dragPercentage); // Adjust animation progress based on drag distance
+    dragPercentage = dragDistance / (window.innerWidth * sensitivity);
+    tween.progress(tween.progress() - dragPercentage);
     initialDragX = clientX;
   }
 }
 
-
-// End dragging
 function endDrag() {
   if (isDragging) {
     isDragging = false;
-    // Calculate the direction based on drag percentage and reverse it
     currentDirection = dragPercentage > 0 ? -1 : 1;
-    // Resume animation with adjusted timeScale and smooth transition
     gsap.to(tween, {
       timeScale: currentDirection,
-      duration: 0, // Smooth transition duration
+      duration: 0,
       onComplete: () => {
-        // Adjust tween progress after transition
         tween.progress(tween.progress() - dragPercentage);
-        // Reset drag percentage
         dragPercentage = 0;
       }
     });
   }
 }
 
-// Event listeners for mouse events
 window.addEventListener('mousedown', startDrag);
 window.addEventListener('mousemove', drag);
 window.addEventListener('mouseup', endDrag);
 
-// Event listeners for touch events
 window.addEventListener('touchstart', startDrag);
 window.addEventListener('touchmove', drag);
 window.addEventListener('touchend', endDrag);
@@ -1583,8 +1488,6 @@ window.addEventListener("scroll", function () {
 
   currentScroll = window.pageYOffset;
 });
-
-
 
 const secondaryVideo = document.getElementById('bgVideo-foto');
 
@@ -1653,13 +1556,6 @@ window.addEventListener('touchstart', () => {
 window.addEventListener('touchend', () => {
   pauseBackgroundVideoSecondary();
 });
-
-
-
-
-
-
-
 
 const thirdVideo = document.getElementById('bgVideo-design');
 
@@ -1742,22 +1638,6 @@ window.addEventListener('touchend', () => {
   pauseBackgroundVideoThird();
 });
 
-
-
-
-
-
-//scrolling 3 things
-
-
-
-
-
-
-
-
-//1nd
-
 let verticalPosition = 0;
 let scrollingDownIs = true;
 let animationProgression;
@@ -1838,94 +1718,68 @@ window.addEventListener("scroll", function () {
   verticalPosition = window.pageYOffset;
 });
 
-
-
-
-
-
-
-
-
-
-//2nd
-
 let currentPosition = 0;
 let isMovingForward = true;
 let animationSequence;
 let isDraggingNow = false;
 let initialDragPos = 0;
-let currentDragPercent = 100; // Updated variable name
-let currentMotionDirection = 1; // Default direction
+let currentDragPercent = 100;
+let currentMotionDirection = 1;
 
-// Function to start GSAP animation
 function initializeSequence() {
-  // Calculate total width of marquee content
   const marqueeWidth = document.querySelector('.marquee-inner3').offsetWidth;
 
   animationSequence = gsap.to(".marquee-inner3", {
-    x: -marqueeWidth / 2, // Initial position
-    repeat: -1, // Repeat indefinitely
-    duration: 20, // Adjust duration as needed
+    x: -marqueeWidth / 2,
+    repeat: -1,
+    duration: 20,
     ease: "linear",
   }).totalProgress(0.5);
 }
 
-// Initialize animation after the DOM is fully loaded
 window.addEventListener('load', initializeSequence);
 
-// Pause animation on mouseenter with transition
-
-
-// Start dragging
 function beginDragging(event) {
   if (event.target.classList.contains('marquee-part4')) {
     isDraggingNow = true;
     initialDragPos = event.clientX || event.touches[0].clientX;
-    gsap.set(animationSequence, { timeScale: 0 }); // Pause animation when dragging starts
+    gsap.set(animationSequence, { timeScale: 0 });
   }
 }
 
-// Continue dragging
 function dragEvent(event) {
   if (isDraggingNow) {
     const clientX = event.clientX || event.touches[0].clientX;
     const dragDistance = clientX - initialDragPos;
-    let sensitivity = 2; // Default sensitivity for desktop
+    let sensitivity = 2;
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      sensitivity = 8; // High sensitivity for mobile devices
+      sensitivity = 8;
     }
-    currentDragPercent = dragDistance / (window.innerWidth * sensitivity); // Updated variable name
-    animationSequence.progress(animationSequence.progress() - currentDragPercent); // Adjust animation progress based on drag distance
+    currentDragPercent = dragDistance / (window.innerWidth * sensitivity);
+    animationSequence.progress(animationSequence.progress() - currentDragPercent);
     initialDragPos = clientX;
   }
 }
 
-// End dragging
 function endDraggingEvent() {
   if (isDraggingNow) {
     isDraggingNow = false;
-    // Calculate the direction based on drag percentage and reverse it
     currentMotionDirection = currentDragPercent > 0 ? -1 : 1;
-    // Resume animation with adjusted timeScale and smooth transition
     gsap.to(animationSequence, {
       timeScale: currentMotionDirection,
-      duration: 0, // Smooth transition duration
+      duration: 0,
       onComplete: () => {
-        // Adjust tween progress after transition
         animationSequence.progress(animationSequence.progress() - currentDragPercent);
-        // Reset drag percentage
         currentDragPercent = 0;
       }
     });
   }
 }
 
-// Event listeners for mouse events
 window.addEventListener('mousedown', beginDragging);
 window.addEventListener('mousemove', dragEvent);
 window.addEventListener('mouseup', endDraggingEvent);
 
-// Event listeners for touch events
 window.addEventListener('touchstart', beginDragging);
 window.addEventListener('touchmove', dragEvent);
 window.addEventListener('touchend', endDraggingEvent);
@@ -1943,10 +1797,6 @@ window.addEventListener("scroll", function () {
 
   currentPosition = window.pageYOffset;
 });
-
-
-
-//3rd
 
 let yPosCustom = 0;
 let isScrollingForwardCustom = true;
@@ -1968,8 +1818,6 @@ function initiateTweenCustom() {
 }
 
 window.addEventListener('load', initiateTweenCustom);
-
-
 
 function beginDragCustom(event) {
   if (event.target.classList.contains('marquee-part5')) {
@@ -2030,27 +1878,17 @@ window.addEventListener("scroll", function () {
   yPosCustom = window.pageYOffset;
 });
 
-
-
-
-
-
-
-
-
 const toggle = document.getElementById('toggle');
 const container1 = document.getElementById('container1');
 const container2 = document.getElementById('container2');
 const container3 = document.getElementById('container3');
 const container4 = document.getElementById('container4');
 
-// Initially hide containers 2 and 4
 container2.style.opacity = 0;
 container4.style.opacity = 0;
 
 toggle.addEventListener('change', function () {
   if (this.checked) {
-    // Toggle on: Fade out containers 1 and 3, then fade in containers 2 and 4
     gsap.to(container1, {
       opacity: 0, duration: 0.5, onComplete: () => {
         container1.classList.add('hidden');
@@ -2066,7 +1904,6 @@ toggle.addEventListener('change', function () {
       }
     });
   } else {
-    // Toggle off: Fade out containers 2 and 4, then fade in containers 1 and 3
     gsap.to(container2, {
       opacity: 0, duration: 0.5, onComplete: () => {
         container2.classList.add('hidden');
@@ -2084,23 +1921,17 @@ toggle.addEventListener('change', function () {
   }
 });
 
-
-
-
-
 const newToggle = document.getElementById('new-toggle');
 const newContainer1 = document.getElementById('new-container1');
 const newContainer2 = document.getElementById('new-container2');
 const newContainer3 = document.getElementById('new-container3');
 const newContainer4 = document.getElementById('new-container4');
 
-// Initially hide containers 2 and 4
 newContainer2.style.opacity = 0;
 newContainer4.style.opacity = 0;
 
 newToggle.addEventListener('change', function () {
   if (this.checked) {
-    // Toggle on: Fade out containers 1 and 3, then fade in containers 2 and 4
     gsap.to(newContainer1, {
       opacity: 0, duration: 0.5, onComplete: () => {
         newContainer1.classList.add('hidden');
@@ -2116,7 +1947,6 @@ newToggle.addEventListener('change', function () {
       }
     });
   } else {
-    // Toggle off: Fade out containers 2 and 4, then fade in containers 1 and 3
     gsap.to(newContainer2, {
       opacity: 0, duration: 0.5, onComplete: () => {
         newContainer2.classList.add('hidden');
@@ -2134,143 +1964,95 @@ newToggle.addEventListener('change', function () {
   }
 });
 
-// Trigger the change event programmatically to start with the switch on
 newToggle.checked = true;
 newToggle.dispatchEvent(new Event('change'));
 
-
-
-
-
-// Function to animate the growing circle
 function animateGrowingCircle() {
   gsap.fromTo('.growing-circle', {
-    scale: 0.7, // Adjusted initial scale
-    opacity: 1
+    scale: 0.7, opacity: 1
   }, {
-    duration: 1,
-    scale: 1.7, // Adjusted final scale
-    opacity: 0,
+    duration: 1, scale: 1.7, opacity: 0,
     ease: "power1.inOut",
-    onComplete: animateGrowingCircle // Repeat the animation
+    onComplete: animateGrowingCircle
   });
 }
 
-// Initial animation trigger
 animateGrowingCircle();
-
-
 
 function redirectToLink(url) {
   window.location.href = url;
 }
 
-
-// Function to animate the growing circle
 function animateGrowingCircleras() {
   gsap.fromTo('.growing-circle2', {
-    scale: 0.7, // Adjusted initial scale
-    opacity: 1
+    scale: 0.7, opacity: 1
   }, {
-    duration: 1,
-    scale: 1.7, // Adjusted final scale
-    opacity: 0,
+    duration: 1, scale: 1.7, opacity: 0,
     ease: "power1.inOut",
-    onComplete: animateGrowingCircleras // Repeat the animation
+    onComplete: animateGrowingCircleras
   });
 }
 
-// Initial animation trigger
 animateGrowingCircleras();
 
-
-// Function to animate the growing circle
 function animateGrowingCirclerasas() {
   gsap.fromTo('.growing-circle4', {
-    scale: 0.7, // Adjusted initial scale
-    opacity: 1
+    scale: 0.7, opacity: 1
   }, {
-    duration: 1,
-    scale: 1.7, // Adjusted final scale
-    opacity: 0,
+    duration: 1, scale: 1.7, opacity: 0,
     ease: "power1.inOut",
-    onComplete: animateGrowingCirclerasas // Repeat the animation
+    onComplete: animateGrowingCirclerasas
   });
 }
 
-// Initial animation trigger
 animateGrowingCirclerasas();
 
-
-
-// Function to animate the growing circle
 function animateGrowingCircleraspop() {
   gsap.fromTo('.growing-circle3', {
-    scale: 0.7, // Adjusted initial scale
-    opacity: 1
+    scale: 0.7, opacity: 1
   }, {
-    duration: 1,
-    scale: 1.7, // Adjusted final scale
-    opacity: 0,
+    duration: 1, scale: 1.7, opacity: 0,
     ease: "power1.inOut",
-    onComplete: animateGrowingCircleraspop // Repeat the animation
+    onComplete: animateGrowingCircleraspop
   });
 }
 
-// Initial animation trigger
 animateGrowingCircleraspop();
 
-
-// Define the animation timeline
 const timeline = gsap.to(".star-absolute-free1", {
   rotation: 360,
   duration: 10,
   ease: "none",
-  repeat: -1, // Infinite repeat
+  repeat: -1,
 });
 
-// Add event listeners for hover
 document.getElementById("new-container1").addEventListener("mouseenter", () => {
-  gsap.to(timeline, { duration: 0.5, timeScale: 5 }); // Speed up slightly
+  gsap.to(timeline, { duration: 0.5, timeScale: 5 });
 });
 
 document.getElementById("new-container1").addEventListener("mouseleave", () => {
-  gsap.to(timeline, { duration: 0.5, timeScale: 1 }); // Return to normal speed
+  gsap.to(timeline, { duration: 0.5, timeScale: 1 });
 });
 
-
-// Define the animation timeline
 const timelineras = gsap.to(".star-absolute-free2", {
   rotation: 360,
   duration: 10,
   ease: "none",
-  repeat: -1, // Infinite repeat
+  repeat: -1,
 });
 
-// Add event listeners for hover
 document.getElementById("new-container2").addEventListener("mouseenter", () => {
-  gsap.to(timelineras, { duration: 0.5, timeScale: 5 }); // Speed up slightly
+  gsap.to(timelineras, { duration: 0.5, timeScale: 5 });
 });
 
 document.getElementById("new-container2").addEventListener("mouseleave", () => {
-  gsap.to(timelineras, { duration: 0.5, timeScale: 1 }); // Return to normal speed
+  gsap.to(timelineras, { duration: 0.5, timeScale: 1 });
 });
 
-
-
-
-
-
-
-
-
-
-// Toggle Collapse
 document.querySelectorAll('.faq li .question').forEach(question => {
   const toggle = question.querySelector('.plus-minus-toggle');
   const answer = question.nextElementSibling;
 
-  // Set initial state to collapsed
   answer.style.maxHeight = 0;
   answer.style.paddingBottom = 0;
   toggle.classList.add('collapsed');
@@ -2278,7 +2060,6 @@ document.querySelectorAll('.faq li .question').forEach(question => {
   question.addEventListener('click', function () {
     const isCollapsed = toggle.classList.contains('collapsed');
 
-    // Toggle collapse
     if (isCollapsed) {
       answer.style.maxHeight = answer.scrollHeight + 'px';
       answer.style.paddingBottom = '25px';
@@ -2287,14 +2068,10 @@ document.querySelectorAll('.faq li .question').forEach(question => {
       answer.style.paddingBottom = 0;
     }
 
-    // Toggle classes
     toggle.classList.toggle('collapsed');
     this.parentNode.classList.toggle('active');
   });
 });
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const loadMoreBtnContainer = document.querySelector(".Choose-text-content-faq-load-more");
@@ -2306,25 +2083,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const maxItemsToShow = 5;
   let visibleItemCount = maxItemsToShow;
 
-  // Initially hide all FAQ items beyond the maximum limit
   faqItems.forEach((item, index) => {
     if (index >= maxItemsToShow) {
       item.style.display = "none";
     }
   });
 
-  // Function to check if all FAQ items are visible
   function allItemsVisible() {
     return visibleItemCount >= faqItems.length;
   }
 
-  // Function to toggle visibility of Load More and Show Less buttons
   function toggleButtons() {
     loadMoreBtnContainer.style.display = allItemsVisible() ? "none" : "block";
     showLessBtnContainer.style.display = allItemsVisible() ? "block" : "none";
   }
 
-  // Event listener for the Load More button
   loadMoreBtn.addEventListener("click", function () {
     let itemsToShow = maxItemsToShow;
     if (visibleItemCount + maxItemsToShow > faqItems.length) {
@@ -2337,11 +2110,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     visibleItemCount += itemsToShow;
 
-    // Hide the Load More button if all items are visible
     toggleButtons();
   });
 
-  // Event listener for the Show Less button
   showLessBtn.addEventListener("click", function () {
     faqItems.forEach((item, index) => {
       if (index >= maxItemsToShow) {
@@ -2350,15 +2121,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     visibleItemCount = maxItemsToShow;
 
-    // Hide the Show Less button
     toggleButtons();
   });
 
-  // Initial button display
   toggleButtons();
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelector('.show-more-button');
@@ -2408,7 +2175,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelector('.show-more-button4');
   const hiddenText = document.querySelector('.hidden-text4');
@@ -2457,45 +2223,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const showMoreButton = document.getElementById("show-more-buttonas");
-  const buttonTextElement = showMoreButton.querySelector("p"); // Get the <p> element inside the button
+  const buttonTextElement = showMoreButton.querySelector("p");
   const hiddenTestimonials = document.querySelectorAll(".Choose-card-testimonial.hidden");
-  let isOpen = false; // Track if testimonials are currently open or closed
+  let isOpen = false;
 
-  // Function to toggle visibility of hidden testimonials
   function toggleTestimonials() {
     hiddenTestimonials.forEach(function (testimonial) {
       testimonial.classList.toggle("hidden");
     });
-    isOpen = !isOpen; // Toggle isOpen state
-    // Change button text based on isOpen state
+    isOpen = !isOpen;
     buttonTextElement.textContent = isOpen ? "Close All" : "More";
   }
 
-  // Hide all but the first 3 testimonials initially
   hiddenTestimonials.forEach(function (testimonial, index) {
     if (index >= 3) {
       testimonial.classList.add("hidden");
     }
   });
 
-  // Toggle visibility of hidden testimonials when "Show More" button is clicked
   showMoreButton.addEventListener("click", function () {
     toggleTestimonials();
   });
 });
-
-
-
-
-
 
 document.getElementById("subscriptionForm").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -2540,8 +2291,8 @@ document.getElementById("subscriptionForm").addEventListener("submit", function 
           if (!response.ok) {
             throw new Error('Subscription failed');
           }
-          console.log('Subscription successful'); // Log success message to console
-          // Alternatively, you can display a pop-up message here
+          console.log('Subscription successful');
+
           alert('Thank you! Your subscription was successful.');
         })
         .catch(error => {
@@ -2555,21 +2306,17 @@ document.getElementById("subscriptionForm").addEventListener("submit", function 
     });
 });
 
-
-
-// Define the animation timeline
 const timelinerasas = gsap.to(".star-absolute-free3", {
   rotation: 360,
   duration: 10,
   ease: "none",
-  repeat: -1, // Infinite repeat
+  repeat: -1,
 });
 
-// Add event listeners for hover
 document.getElementById("subsribe-hover-on").addEventListener("mouseenter", () => {
-  gsap.to(timelinerasas, { duration: 0.5, timeScale: 5 }); // Speed up slightly
+  gsap.to(timelinerasas, { duration: 0.5, timeScale: 5 });
 });
 
 document.getElementById("subsribe-hover-on").addEventListener("mouseleave", () => {
-  gsap.to(timelinerasas, { duration: 0.5, timeScale: 1 }); // Return to normal speed
+  gsap.to(timelinerasas, { duration: 0.5, timeScale: 1 });
 });
