@@ -777,53 +777,6 @@ body {
   cursor: default;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #bgVideo-foto {
   position: absolute;
   top: 50%;
@@ -1118,26 +1071,15 @@ body {
 
 #marquee-part {
   user-select: none;
-  /* Standard syntax */
   -webkit-user-select: none;
-  /* Webkit browsers */
   -moz-user-select: none;
-  /* Mozilla Firefox */
   -ms-user-select: none;
-  /* Internet Explorer/Edge */
 }
 
 .slider-benefits-container {
   margin-top: 20vh;
   margin-bottom: 15vh;
 }
-
-
-
-
-
-
-
 
 .Choose-content {
   text-align: center;
@@ -1147,15 +1089,10 @@ body {
   z-index: 20;
 }
 
-
-
-
-
-
 .Choose-text-content-faq-load-more,
 .Choose-text-content-faq-close-all {
   font-size: 1.3rem;
-  width: auto;
+  width: 100%;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
@@ -1429,7 +1366,7 @@ body {
   align-items: center;
   margin-bottom: 5vh;
   text-align: center;
-  padding-top: 30vh;
+  padding-top: 20vh;
 }
 
 .Choose-title {
@@ -2098,7 +2035,7 @@ body {
 #show-more-buttonas {
   position: absolute;
   z-index: 90;
-  bottom: 5vh;
+  bottom: 0vh;
   width: 200px;
   height: auto;
   background-color: transparent;
@@ -2240,6 +2177,7 @@ body {
 
 .faq-container {
   margin-top: 30vh;
+  margin-bottom: 10vh;
   background-color: black;
   border-radius: 13px;
   border: 1px solid rgba(90, 90, 90, 1);
@@ -2585,8 +2523,8 @@ ul {
   }
 
   .Choose-container {
-    min-height: 170vh;
-    margin-top: 40vh;
+    min-height: 150vh;
+    padding-top: 20vh;
   }
 
   .plans-card-container-border {
@@ -2726,6 +2664,12 @@ ul {
 }
 
 @media screen and (max-width: 600px) {
+  .Choose-container {
+    min-height: 150vh;
+    padding-top: 25vh;
+  }
+
+
   .footer-coldown {
     width: 100%;
   }
@@ -2763,9 +2707,7 @@ ul {
     font-size: 3rem;
   }
 
-  .Choose-container {
-    margin-top: 30vh;
-  }
+
 
   .Choose-card {
     width: 80%;
