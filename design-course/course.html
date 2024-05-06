@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <title>Design Course</title>
+
+</head>
+
+<body style="background-color: antiquewhite;">
+  <h1>course page</h1>
+  ... <!-- course itself will be here -->
+  <button id="signOutButton">SignOut</button> <!-- register button -->
+
+
+  </div>
+
+  <!-- js file...pls don't change anything -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBOeyeJGvPtyeSslgj1vln_Ct7Zve2OF5E",
+      authDomain: "course-website-b78d2.firebaseapp.com",
+      projectId: "course-website-b78d2",
+      storageBucket: "course-website-b78d2.appspot.com",
+      messagingSenderId: "621956158107",
+      appId: "1:621956158107:web:0722ce13024a0e9a93ac3e"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const checkAuthState = async () => {
+      onAuthStateChanged(auth, user => {
+        if (!user) {
+          window.location.href = "./login.html"
+        }
+      })
+    }
+    checkAuthState();
+
+    const signOutButton = document.querySelector("#signOutButton");
+
+
+    const userSignOut = async () => {
+      signOut(auth)
+        .then(() => {
+          // alert("signed out successfully")
+          window.location.href = 'index.html'
+        })
+        .catch((error) => {
+          console.log(error)
+
+        })
+    }
+
+    signOutButton.addEventListener('click', userSignOut);
+
+  </script>
+</body>
+
+</html>

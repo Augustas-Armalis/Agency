@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <title>Design Course Login</title>
+  <style>
+    /* Center the div horizontally and vertically */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Style for the input fields */
+    input {
+      margin-bottom: 10px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    /* Style for the login button */
+    button {
+      cursor: pointer;
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="authForm">
+    <h3>Login!</h3>
+    <P style="color: red;">Please do login with your information email and password which u gave in checkout</P>
+    <input type="email" placeholder="email" id="userEmail"> <br><!-- email -->
+    <input type="password" placeholder="password" id="userPassword"> <!-- password -->
+    <div class="button-container">
+      <button id="signInButton">SignIn</button> <!-- register button -->
+      <button id="signOutButton">SignOut</button> <!-- register button -->
+    </div>
+    <div>
+      <P><button id="resetPassword">Forgot password?</button> </P>
+      <p style="color: red;">(To send your request for reset password please write your email in the email input) </p>
+    </div>
+
+  </div>
+  <!-- js file... pls don't change anything -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      signOut,
+      sendPasswordResetEmail
+    } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBOeyeJGvPtyeSslgj1vln_Ct7Zve2OF5E",
+      authDomain: "course-website-b78d2.firebaseapp.com",
+      projectId: "course-website-b78d2",
+      storageBucket: "course-website-b78d2.appspot.com",
+      messagingSenderId: "621956158107",
+      appId: "1:621956158107:web:0722ce13024a0e9a93ac3e"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const userEmail = document.querySelector("#userEmail");
+    const userPassword = document.querySelector("#userPassword");
+    const signInButton = document.querySelector("#signInButton");
+    const signOutButton = document.querySelector("#signOutButton");
+    const resetPassword = document.querySelector("#resetPassword")
+
+
+    const userSignIn = async () => {
+      const signInEmail = userEmail.value;
+      const signInPassword = userPassword.value;
+      signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          userEmail.value = '';
+          userPassword.value = '';
+          window.location.href = './course.html'
+          // alert("You have signed in Successfully");
+
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode + errorMessage)
+
+          if (errorCode === "auth/invalid-credential" || errorCode === "auth/wrong-password")
+            alert("User not found or incorrect email/password. Please Pay first.");
+          else {
+            console.error(errorCode + errorMessage);
+            alert("An error occurred. Please try again later.");
+          }
+        });
+    }
+
+    const userSignOut = async () => {
+      signOut(auth)
+        .then(() => {
+          // alert("signed out successfully")
+          window.location.href = './index.html'
+        })
+        .catch((error) => {
+          console.log(error)
+
+        })
+    }
+
+    const passwordReset = async () => {
+      const email = userEmail.value;
+      try {
+        await sendPasswordResetEmail(auth, email);
+        alert('Password reset email sent. Please check your inbox.');
+      } catch (error) {
+        console.error(error);
+        alert('An error occurred. Please try again later.');
+      }
+    };
+
+
+
+    const checkAuthState = async () => {
+      onAuthStateChanged(auth, user => {
+        if (user) {
+          signOutButton.style.display = "block"
+        } else {
+          signOutButton.style.display = "none"
+        }
+      })
+    }
+    checkAuthState();
+
+
+
+
+    signInButton.addEventListener('click', userSignIn);
+    signOutButton.addEventListener('click', userSignOut);
+    resetPassword.addEventListener('click', passwordReset)
+
+
+  </script>
+</body>
+
+</html>

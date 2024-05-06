@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="checkoutFavicon.png">
+  <title>Design Course Checkout</title>
+  <script src="https://js.stripe.com/v3"></script>
+  <style>
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .checkout-action {
+      width: 300px;
+      margin: auto;
+      border: 5px solid black;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body style="background-color: bisque;">
+
+  <!-- if you'll create the check out page customly do it here 😀 -->
+  <!-- if not then this html is not needed -->
+  <h1 style="text-align: center; text-decoration: underline;">Create your account after buying the course</h1>
+  <div class="input-container">
+
+
+    <input type="email" id="email" placeholder="Your Email" style="width: 300px;margin-bottom: 20px;padding: 5px;"><br>
+    <input type="password" id="password" placeholder="Your Password"
+      style="width: 300px;margin-bottom: 20px;padding: 5px;"><br>
+
+  </div>
+  <div class="checkout-action">
+
+    <button id="checkOutBtn">Create account</button>
+  </div>
+  <!-- javascript -->
+
+  <script type="module">
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBOeyeJGvPtyeSslgj1vln_Ct7Zve2OF5E",
+      authDomain: "course-website-b78d2.firebaseapp.com",
+      projectId: "course-website-b78d2",
+      storageBucket: "course-website-b78d2.appspot.com",
+      messagingSenderId: "621956158107",
+      appId: "1:621956158107:web:0722ce13024a0e9a93ac3e"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+
+    const checkOutBtn = document.querySelector('#checkOutBtn');
+
+    checkOutBtn.addEventListener('click', async () => {
+      const email = document.querySelector('#email').value.trim();
+      const password = document.querySelector('#password').value.trim();
+
+      if (!email || !password) {
+        return alert("Fill all the inputs");
+      }
+
+      try {
+        // Create new user
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log(user);
+        // Redirect to login page on successful registration
+
+        window.location.href = "course.html";
+        // alert("User Created successfully")
+      } catch (error) {
+        console.error(error.code, error.message);
+        alert(error.message);
+      }
+    });
+
+
+
+  </script>
+</body>
+
+</html>
