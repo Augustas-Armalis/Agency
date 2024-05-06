@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "NewYork";
+  src: url("fonts/new_york/NewYork\ PERSONAL\ USE.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sf";
+  src: url("fonts/sf_pro_display/SFPRODISPLAYREGULAR.OTF") format("truetype");
+}
+
+@font-face {
+  font-family: "SfBold";
+  src: url("fonts/sf_pro_display/SFPRODISPLAYBOLD.OTF") format("truetype");
+}
+
+@font-face {
+  font-family: "SfItalic";
+  src: url("fonts/sf_pro_display/SFPRODISPLAYTHINITALIC.OTF") format("truetype");
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "Sf";
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.load-in-container {
+  overflow: hidden;
+  display: flex;
+  cursor: default;
+}
+
+.load-in-container p {
+  font-size: 2rem;
+  margin: 0;
+  line-height: auto;
+  cursor: default;
+}
+
+
+.fourth-title,
+.fourth-title1 {
+  align-self: baseline;
+  position: absolute;
+  z-index: 90;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+} 
+
+
+.twelft-container {
+  background-size: 10rem 10rem;
+  background-image: linear-gradient(to right, rgba(70, 70, 70, 1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 70, 70, 1) 1px, transparent 1px);
+  background-position: center;
+  z-index: 90;
+  background-color: black;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 30vh;
+}
+
+
+.Choose-card {
+  width: 300px;
+  margin: 10px;
+  height: auto;
+  border-radius: 13px;
+  box-shadow: 0 0 10px rgba(151, 59, 59, 0.2);
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid rgb(255, 0, 0)
+}
+
+.Choose-card:nth-child(3) {
+  border: 1px solid rgb(0, 225, 0)
+}
+
+
+.Choose-content {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.Choose-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15vh;
+  text-align: center;
+}
+
+.Choose-title{
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.Choose-text-content{
+  font-size: 1.3rem;
+  border-top: 1px solid rgba(70, 70, 70, 1);
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.choose-first-title{
+  font-family: "NewYork";
+  font-size: 3.5rem;
+  margin-bottom: -0.7rem;
+}
+
+.choose-first-title-content{
+  font-size: 1.5rem;
+  font-family: "SfItalic";
+  margin-bottom: 0.5rem;
+}
+
+.Choose-text-content-title{
+  font-size: 2rem;
+  font-family: "Sf";
+}
+
+.Choose-text-content-content{
+  font-family: "SfItalic";
+  font-size: 2rem;  
+}
+
+@media screen and (max-width: 600px) {
+  .Choose-card:nth-child(3) {
+    border: 1px solid rgb(225, 0, 0)
+  }
+
+  .Choose-card:nth-child(4) {
+    border: 1px solid rgb(0, 225, 0)
+  }
+}

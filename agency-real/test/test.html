@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+  <title>Test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+</head>
+
+<body>
+
+
+  <style></style>
+
+
+  <!-- FAQ -->
+  <div class="parent-container">
+    <ul class="faq">
+      <li>
+        <h3 class="question">Frequently Asked Question?
+          <div class="plus-minus-toggle collapsed"></div>
+        </h3>
+        <div class="answer">Answer. Donec vitae tellus risus. Aenean sed fermentum risus. Phasellus venenatis
+          ultricies dignissim. Nunc ante lectus, accumsan non porta at. Donec vitae tellus risus. Aenean sed
+          fermentum risus. Phasellus venenatis ultricies dignissim.</div>
+      </li>
+      <li>
+        <h3 class="question">Frequently Asked Question?
+          <div class="plus-minus-toggle collapsed"></div>
+        </h3>
+        <div class="answer">Answer. Donec vitae tellus risus. Aenean sed fermentum risus. Phasellus venenatis
+          ultricies dignissim. Nunc ante lectus, accumsan non porta at. Donec vitae tellus risus. Aenean sed
+          fermentum risus. Phasellus venenatis ultricies dignissim.</div>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Toggle Collapse
+    document.querySelectorAll('.faq li .question').forEach(question => {
+      question.addEventListener('click', function () {
+        const toggle = this.querySelector('.plus-minus-toggle');
+        const answer = this.nextElementSibling;
+        const isCollapsed = toggle.classList.contains('collapsed');
+
+        // Toggle collapse
+        if (isCollapsed) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          answer.style.paddingBottom = '25px';
+        } else {
+          answer.style.maxHeight = 0;
+          answer.style.paddingBottom = 0;
+        }
+
+        // Toggle classes
+        toggle.classList.toggle('collapsed');
+        this.parentNode.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
