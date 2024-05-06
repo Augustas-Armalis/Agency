@@ -13,6 +13,7 @@
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -24,7 +25,7 @@
 
   <div class="brand-name">
     <div class="load-in-container">
-      <a href="#" class="agency-a">Armalis Agency</a>
+      <a href="https://augustasarmalis.com/" class="agency-a">Armalis Agency</a>
     </div>
   </div>
 
@@ -41,10 +42,11 @@
       <div class="agency-a1">
         <a href="#" class="plans" id="hover-trigger15">
           <div id="spinning-img15">
-            <img class="circle-image" src="images/Filled Star.svg" alt="Spinning Image">
+
           </div>
-          Plans
+
         </a>
+
       </div>
       <div class="bars1">
         <a href="#" class="plans" id="hover-trigger16">
@@ -60,19 +62,25 @@
     <div class="nav">
       <div class="nav-items">
         <div class="hide-the-nav">
-          <div class="navigation-item"><a href="#">Lorem</a></div>
+          <div class="navigation-item"><a href="#">Home</a></div>
         </div>
         <div class="hide-the-nav">
-          <div class="navigation-item"><a href="#">Lorem</a></div>
+          <div class="navigation-item"><a href="#">Design</a></div>
         </div>
         <div class="hide-the-nav">
-          <div class="navigation-item"><a href="#">Lorem</a></div>
+          <div class="navigation-item"><a href="#">Websites</a></div>
         </div>
         <div class="hide-the-nav">
-          <div class="navigation-item"><a href="#">Lorem</a></div>
+          <div class="navigation-item"><a href="#">Courses</a></div>
         </div>
         <div class="hide-the-nav">
-          <div class="navigation-item"><a href="#">Lorem</a></div>
+          <div class="navigation-item"><a href="#">Hiring</a></div>
+        </div>
+        <div class="hide-the-nav">
+          <div class="navigation-item"><a href="#">Teaching</a></div>
+        </div>
+        <div class="hide-the-nav">
+          <div class="navigation-item"><a href="#">Contacts</a></div>
         </div>
       </div>
     </div>
@@ -86,6 +94,15 @@
         </div>
         Plans
       </a>
+      <script>
+        $(document).ready(function () {
+          $("a.plans").click(function () {
+            $('html, body').animate({
+              scrollTop: $(".thirteenth-container").offset().top
+            }, 1000);
+          });
+        });
+      </script>
     </div>
     <div class="bars1">
       <a href="#" class="plans" id="hover-trigger1">
@@ -117,19 +134,19 @@
     <div class="landing-text-container">
       <div class="land-line-container-landing">
         <div id="land-line" class="first-line">
-          <p id="newYorkL" class="land1">D</p>
-          <p id="newYorkL" class="land1">i</p>
-          <p id="newYorkL" class="land1">g</p>
-          <p id="newYorkL" class="land1">i</p>
-          <p id="newYorkL" class="land1">t</p>
-          <p id="newYorkL" class="land1">a</p>
-          <p id="newYorkL" class="land1" style="padding-right: 3vw;">l</p>
           <p id="SfL" class="land1">D</p>
-          <p id="SfL" class="land1">e</p>
-          <p id="SfL" class="land1">s</p>
           <p id="SfL" class="land1">i</p>
           <p id="SfL" class="land1">g</p>
-          <p id="SfL" class="land1">n</p>
+          <p id="SfL" class="land1">i</p>
+          <p id="SfL" class="land1">t</p>
+          <p id="SfL" class="land1">a</p>
+          <p id="SfL" class="land1" style="padding-right: 3vw;">l</p>
+          <p id="newYorkL" class="land1">D</p>
+          <p id="newYorkL" class="land1">e</p>
+          <p id="newYorkL" class="land1">s</p>
+          <p id="newYorkL" class="land1">i</p>
+          <p id="newYorkL" class="land1">g</p>
+          <p id="newYorkL" class="land1">n</p>
         </div>
       </div>
       <div class="land-line-container-landing">
@@ -1717,39 +1734,33 @@
     <div class="containerdown">
       <div class="rowdown">
         <div class="footer-coldown">
-          <h4>Lorem</h4>
+          <h4>Agency</h4>
           <ul>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">FAQs</a></li>
           </ul>
         </div>
         <div class="footer-coldown">
-          <h4>Lorem</h4>
+          <h4>Courses</h4>
           <ul>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Design course</a></li>
+            <li><a href="#">POP course</a></li>
           </ul>
         </div>
         <div class="footer-coldown">
-          <h4>Lorem</h4>
+          <h4>Services</h4>
           <ul>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Website</a></li>
           </ul>
         </div>
         <div class="footer-coldown">
-          <h4>Lorem</h4>
+          <h4>Special</h4>
           <ul>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Hiring</a></li>
+            <li><a href="#">Teaching</a></li>
           </ul>
         </div>
       </div>
