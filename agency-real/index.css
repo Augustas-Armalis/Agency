@@ -2110,7 +2110,7 @@ body {
 }
 
 .faq li.active .answer {
-  max-height: 275px !important;
+  max-height: 500px !important;
   padding-bottom: 25px;
   transition: max-height 0.5s ease, padding-bottom 0.5s ease;
 }
